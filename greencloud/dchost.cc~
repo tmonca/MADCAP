@@ -1,0 +1,267 @@
+/* -*-	Mode:C++; c-basic-offset:8; tab-width:8; indent-tabs-mode:t -*- */
+/*
+ */
+
+#include "dchost.h"
+#include <lib/builtin.h>
+
+static class DcHostClass : public TclClass {
+public:
+	DcHostClass() : TclClass("DcHost") {}
+	TclObject* create(int argc, const char*const*argv) {
+		return (new DcHost());
+	}
+} class_dchost;
+
+DcHost::DcHost(): host_id_(0), nominal_mips_(0), current_mips_(0), ntasks_(0), currentLoad_(0.0), eConsumed_(0.0), eNominalrate_ (0.0), eCurrentConsumption_ (0.0), eLastUpdateTime_(0.0), agent_(NULL)
+{
+  bind("host_id_", &host_id_);
+  bind("ntasks_", &ntasks_);
+  bind("currentLoad_", &currentLoad_);
+  bind("nominal_mips_", &nominal_mips_);
+  
+  bind("eConsumed_", &eConsumed_);				/* total W of energy consumed */
+  bind("eNominalrate_", &eNominalrate_);
+  bind("eCurrentConsumption_", &eCurrentConsumption_);		/* current consumption rate */
+  
+  bind("eDVFS_enabled_", &eDVFS_enabled_);			/* ON when DVFS is enabled */
+  bind("eDNS_enabled_", &eDNS_enabled_);			/* ON when DNS is enabled */
+  
+  tasks_list_.clear();
+}
+
+
+DcHost::~DcHost()
+{
+	tasks_list_.~vector();
+}
+
+void DcHost::recv(TskObject *tskobj)
+{
+	// printf("%f(DcHost): task %d received in host %d (%d tasks running)! Size: %d, MIPS: %d, deadline: %f\n", Scheduler::instance().clock(), tskobj->getID(), host_id_, tasks_list_.size(), tskobj->getSize(), tskobj->getMIPS(), tskobj->getDeadline());
+	
+	ntasks_ ++;			// update total number of the received tasks
+	// mips_infly_ -= tskobj->getMIPS();
+	
+	tasks_list_.push_back(tskobj);	// add to the active tasks links
+	
+	/* set execution time */
+	tskobj->setExecTime(Scheduler::instance().clock());
+	
+	updateTskList();
+	
+	// computeCurrentLoad();
+	
+	/* Update energy */
+	eUpdate();			/* Update energy for the last interval */
+	setCurrentConsumption();	/* Update current energy consumption */
+}
+
+void DcHost::updateTskList()
+{
+  vector<TskObject*>::iterator iter;
+  
+  /* update task computing rates to see which tasks are completed */
+  updateTskComputingRates();
+  
+  /* remove completed tasks from the execution list */
+  for (iter = tasks_list_.begin(); iter != tasks_list_.end();)
+  {
+    /* task should be completed and remove it from the list */
+    if ((*iter)->getMIPS() <= 1) {
+      // printf("%f(DcHost): task %d completed\n", Scheduler::instance().clock(), (*iter)->getID());
+      if ((agent_) && ((*iter)->getOutput() != 0)) {
+	// printf("%f(DcHost): task %d completed, sending output %d bytes\n", Scheduler::instance().clock(), (*iter)->getID(), (*iter)->getOutput());
+	agent_->send((*iter)->getOutput());	// generate output if any required by the task
+      }
+      tasks_list_.erase(iter);
+    } else {
+      iter++;
+    }
+  }
+ 
+  /* set server computing rate */
+  setComputingRate();
+  
+  /* compute next deadline */
+  double nextDeadline = DBL_MAX;
+  for (iter = tasks_list_.begin(); iter != tasks_list_.end(); iter++)
+  {
+      if (nextDeadline > (*iter)->getDeadline()) nextDeadline = (*iter)->execTime();
+  }
+  // printf("%f(DcHost):\tnext delay: %f\n", Scheduler::instance().clock(), nextDeadline);
+  
+  /* reschedule next update */
+  if (nextDeadline != DBL_MAX) nextEvent(nextDeadline);
+  
+  /* Update energy */
+  eUpdate();			/* Update energy for the last interval */
+  setCurrentConsumption();	/* Update current energy consumption */
+}
+
+void DcHost::setComputingRate()
+{
+  vector<TskObject*>::iterator iter;
+  
+  /* DVFS enabled */
+  if (eDVFS_enabled_) {
+    /* Max requested rate times the number of active taks */
+    current_mips_ = getMostUrgentTaskRate()*tasks_list_.size();
+  } else {
+    /* no energy saving */
+    if (tasks_list_.size() != 0) current_mips_ = nominal_mips_;
+    else current_mips_ = 0;
+  }
+  
+  // printf("%f(DcHost): setting computing rate to %d\n", Scheduler::instance().clock(), current_mips_);
+  
+  /* new computing rate, report it to tasks */
+  updateTskComputingRates();
+}
+
+double DcHost::getMostUrgentTaskRate()
+{
+  vector<TskObject*>::iterator iter;
+  
+  /* Compute highest MIPS/deadline ratio */
+  double maxrate = 0.0;
+
+  /* remove completed tasks from the execution list */
+  for (iter = tasks_list_.begin(); iter != tasks_list_.end(); iter++)
+  {
+    /* task should be completed and remove it from the list */
+    double rate = (double)(*iter)->getMIPS()/(double)(*iter)->getDeadline();
+    if (rate > maxrate) maxrate = rate;
+  }
+  
+  return maxrate;
+}
+
+void DcHost::updateTskComputingRates()
+{
+  vector<TskObject*>::iterator iter;
+
+  for (iter = tasks_list_.begin(); iter != tasks_list_.end(); iter++)
+  {
+    /* each task with then update mips left */
+    (*iter)->setComputingRate((double)current_mips_/tasks_list_.size());
+  }
+}
+
+void DcHost::nextEvent(double delay)
+{
+  // printf("%f(DcHost): scheduling next event deadline: %f\n", Scheduler::instance().clock(), Scheduler::instance().clock() + delay);
+  
+  if (status_ == EVENT_PENDING) {
+    _cancel();
+    status_ = EVENT_IDLE;
+  }
+  
+  event_.handler_ = this;
+  event_.time_ = Scheduler::instance().clock();
+  
+  _sched(delay);
+  status_ = EVENT_PENDING;
+}
+
+void DcHost::handle(Event* event)
+{
+  updateTskList();
+
+  // printf("%f: task completed, active tasks: %d, server load: %d\n", Scheduler::instance().clock(), tasks_list_.size(), current_load_mips_);
+}
+
+double DcHost::getCurrentLoad()
+{
+  currentLoad_ = (double)current_mips_/(double)nominal_mips_;
+  
+  return currentLoad_;
+}
+
+int DcHost::trySchedulingTsk(TskObject *tskobj)
+{
+  /* get minimum processing rate required by the task */
+  // printf("%f(DcHost): tryschedulingtsk: taskmips: %d, taskdeadline: %f\n", Scheduler::instance().clock(), tskobj->getMIPS(), tskobj->getDeadline());
+  
+  double tskrate = (double)tskobj->getMIPS()/(tskobj->getDeadline() - Scheduler::instance().clock());
+  
+  /* get minimum processing rate required by the most urgent already executed task */
+  double maxrate = getMostUrgentTaskRate();
+  
+  /* check whether the task in question is more urgent */
+  if (tskrate > maxrate) maxrate = tskrate;
+  
+  // printf("%f(DcHost): tryschdulingtsk tskrate: %f, maxrate: %f, nominal_mips: %d\n", Scheduler::instance().clock(), tskrate, maxrate, nominal_mips_);
+  
+  if (maxrate*(tasks_list_.size() + 1) <= nominal_mips_){
+    /* task can be scheduled, add to the in-fly list */
+    tasks_assigned_.push_back(tskobj);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void DcHost::setCurrentConsumption()
+{
+  /* Compute idle server consumption */
+  double eIdleConsumption = eNominalrate_*2/3;
+  
+  /* if DNS is enabled no energy is consumed with zero load */
+  if ((getCurrentLoad() == 0) && (eDNS_enabled_)) {
+    eCurrentConsumption_ = 0;
+    return;
+  }
+  
+  /* if DVFS is enabled energy consumed is scaled with the frequency */
+  if (eDVFS_enabled_) {
+    double f = getCurrentLoad();	/* frequency component */
+    eCurrentConsumption_ = eIdleConsumption + eNominalrate_ * f*f*f / 3;
+    return;
+  }
+  
+  /* Compute load dependant energy consumption component */
+  double eLoadComponent = (eNominalrate_ - eIdleConsumption) * getCurrentLoad();
+  
+  eCurrentConsumption_ = eIdleConsumption + eLoadComponent;
+}
+
+void DcHost::eUpdate()
+{
+  /* Get time spent since last update */
+  double etime = (Scheduler::instance().clock() - eLastUpdateTime_)/3600;	/* time in hours */
+
+  // printf("eUpdate: %f, consumption rate: %f\n", etime, eCurrentConsumption_);
+  eConsumed_ += etime * eCurrentConsumption_;
+  eLastUpdateTime_ = Scheduler::instance().clock();
+}
+
+int DcHost::command(int argc, const char*const* argv)
+{
+  	Tcl& tcl = Tcl::instance();
+  
+	if (argc == 2) {
+		if (strcmp(argv[1], "start") == 0) {
+
+		  /* start counting energy consumed */
+		  setCurrentConsumption();
+		  eLastUpdateTime_ = Scheduler::instance().clock();
+		  return (TCL_OK);
+		} else if (strcmp(argv[1], "stop") == 0) {
+
+		  /* update total energy consumed */
+		  eUpdate();
+		  return (TCL_OK);
+		}
+	} else if (argc == 3) {
+		if (strcmp(argv[1], "attach-agent") == 0) {
+			agent_ = (Agent*) TclObject::lookup(argv[2]);
+			if (agent_ == 0) {
+				tcl.resultf("no such agent %s", argv[2]);
+				return(TCL_ERROR);
+			}
+			return(TCL_OK);
+		}
+	}
+	return (DcHost::command(argc, argv));	
+}

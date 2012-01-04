@@ -1,0 +1,9 @@
+tracing
+	#pkt	#pkt
+rcvr	rcvd	lost
+0	320	24
+1	323	24
+2	286	55
+3	288	56
+4	326	24
+5	0	0

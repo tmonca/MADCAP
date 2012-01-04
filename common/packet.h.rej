@@ -1,0 +1,15 @@
+--- common/packet.h	2009-06-14 18:35:44.000000000 +0100
++++ common/packet.h	2010-03-20 18:13:25.000000000 +0000
+@@ -183,8 +184,11 @@
+ 	// AOMDV packet
+ static const packet_t PT_AOMDV = 61;
+ 
++	// Clouduser packet
++static const packet_t PT_CLOUD_USER = 62;
++
+         // insert new packet types here
+-static packet_t       PT_NTYPE = 62; // This MUST be the LAST one
++static packet_t       PT_NTYPE = 63; // This MUST be the LAST one
+ 
+ enum packetClass
+ {

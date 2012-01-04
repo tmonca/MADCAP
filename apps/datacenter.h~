@@ -1,0 +1,34 @@
+#ifndef ns_datacenter_h
+#define ns_datacenter_h
+
+#include "object.h"
+#include "clouduser.h"
+#include "dchost.h"
+#include "tskagent.h"	
+#include <tclcl.h>
+#include <vector>
+#include <math.h> 
+#include <iostream> 
+#include <numeric> 
+
+class DataCenter : public TclObject {
+public:
+	DataCenter();
+	virtual ~DataCenter();
+//	virtual void schedule(params);
+//	virtual void connect(params);
+	void addHostPointer(DcHost *newhst); 
+ 	void addTaskAgentPointer(TskComAgent *newagnt); 
+	virtual int command(int argc, const char*const* argv); 
+	
+protected:
+	vector <DcHost*> host_list;
+	vector <TskComAgent*> agent_list;
+
+	DcHost *newhost_;
+	TskComAgent *newtskagent_;
+
+	FILE * pFile1;
+};
+
+#endif

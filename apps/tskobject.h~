@@ -1,0 +1,31 @@
+#ifndef ns_tskobject_h
+#define ns_tskobject_h
+
+#include <iostream> 
+
+//class TskObject : public TclObject {
+//public:
+//	TskObject();
+//	TskObject(int length_);
+//	virtual ~TskObject();
+//	virtual int command(int argc, const char*const* argv); 
+//	
+//protected:
+//	int tsklen_;
+//};
+
+class TskObject {
+public:
+	TskObject();
+	TskObject(int length_);
+	virtual ~TskObject();
+	//Debug
+	int returnInc();
+	void writeInc(int inc);
+	
+protected:
+	int tsklen_;
+	int inc_;	
+};
+
+#endif

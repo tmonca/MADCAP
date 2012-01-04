@@ -1,0 +1,55 @@
+/* -*-	Mode:C++; c-basic-offset:8; tab-width:8; indent-tabs-mode:t -*- */
+/*
+ */
+
+#ifndef lint
+static const char rcsid[] =
+    "@(#) $Header: /cvsroot/nsnam/ns-2/common/taskobject.cc,v 1.43 $";
+#endif
+
+#include "tskobject.h"
+
+TskObject::TskObject() : id_(0), size_(0), mips_(0), output_(0), intercom_(0), currProcRate_(0.0), executedSince_(0.0)
+{
+}
+
+TskObject::TskObject(unsigned int size, unsigned int mips, double duration)
+{
+  id_ = 0;
+  currProcRate_ = executedSince_ = 0.0;
+  output_ = intercom_ = 0;
+  
+  size_ = size;
+  mips_ = mips;
+  deadline_ = Scheduler::instance().clock() + duration;
+  
+  // printf("%f(TskObject):\tcreating task size: %d, mips: %d, deadline: %f\n", Scheduler::instance().clock(), size_, mips_, deadline_);
+}
+
+TskObject::~TskObject()
+{
+}
+
+void TskObject::updateMIPS()
+{
+  double operationsComputed = currProcRate_*(Scheduler::instance().clock() - executedSince_);
+  
+  // printf("%f(TskObject):\tupdating mips currrate: %f, operationsComputed: %f, mips: %d, executedSince: %f\n", Scheduler::instance().clock(), currProcRate_, operationsComputed, mips_, executedSince_);
+  
+  /* update mips_ for the amound executed */
+  mips_ -= (unsigned int) operationsComputed;
+  executedSince_ = Scheduler::instance().clock();
+}
+
+void TskObject::setComputingRate(double rate)
+{
+  /* update what has already been computed */
+  updateMIPS();
+  currProcRate_ = rate;
+}
+
+double TskObject::execTime()
+{
+  if (currProcRate_) return ((double)mips_/currProcRate_);
+  else return DBL_MAX;
+}

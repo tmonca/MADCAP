@@ -1,0 +1,1415 @@
+adc/sa.cc:128:	//send the request packet
+adc/sa.cc:233:                /* send a packet */
+adc/sa.cc:235:                /* figure out when to send the next one */
+adc/tbf.cc:138:	//We simply send the packet here without checking if we have enough tokens
+aodv/aodv.cc:200:    // and send route errors upstream.
+aodv/aodv.cc:206:      // send RERR
+aodv/aodv.cc:483:  * For now, drop the packet and send error upstream.
+aodv/aodv.cc:514:   // send buffer and invalidate the route.                    
+aodv/aodv.cc:541:   // the sendbuffer, then send out route request. sendRequest
+aodv/aodv.cc:542:   // will check whether it is time to really send out request
+aodv/aodv.cc:741:  * Now see whether we can send a route reply. 
+aodv/aodv.cc:802:// TODO: send grat RREP to dst if G flag set in RREQ using rq->rq_src_seqno, rq->rq_hop_counT
+aodv/aodv.cc:1054:   // Not a broadcast packet, no delay, send immediately
+aodv/aodv_rtable.h:98:        double          rt_req_timeout;         // when I can send another req
+aomdv/aomdv.cc:238:	/* Do not send a HELLO message unless we have a valid route entry. */
+aomdv/aomdv.cc:275:		// and send route errors upstream.
+aomdv/aomdv.cc:281:		// send RERR
+aomdv/aomdv.cc:614:			* For now, drop the packet and send error upstream.
+aomdv/aomdv.cc:672:			// the sendbuffer, then send out route request. sendRequest
+aomdv/aomdv.cc:673:			// will check whether it is time to really send out request
+aomdv/aomdv.cc:930:	/* I am the intended receiver of the RREQ - so send a RREP */ 
+aomdv/aomdv.cc:954:	/* I have a fresh route entry for RREQ destination - so send RREP */
+aomdv/aomdv.cc:998:				along this reverse path (for this RREQ) - send a RREP back. */
+aomdv/aomdv.cc:1404:			// Not a broadcast packet, no delay, send immediately
+aomdv/aomdv.cc:1852:			// Not a broadcast packet, no delay, send immediately
+aomdv/aomdv_rtable.h:210:        double          rt_req_timeout;         // when I can send another req
+apps/ping.h:88: 	int seq;	// a send sequence number like in real ping
+apps/worm.cc:154:    //printf("Node %d is probing node %d, within AN, send to node %d\n", 
+apps/worm.cc:286:  // send out probes in a batch
+apps/worm.cc:295:    // do not send to myself or AS
+apps/rtp.cc:196: * rate before we can send at the new (faster) rate.
+asim/asim.cc:636:      // send then 
+asim/asimstd.cc:490:				// send then 
+baytcp/tcp-full-bay.h:56:#define TCPS_SYN_RECEIVED       3       /* have send and received syn */
+baytcp/tcp-full-bay.h:149:    int data_on_syn_;   // send data on initial SYN?
+baytcp/tcp-full-bay.h:151:    int iss_;       // initial send seq number
+baytcp/tcp-full-bay.h:169:    int need_send();    // need to send ACK/win-update now?
+baytcp/tcp-full-bay.cc:50: *	whereas many "real-world" TCPs don't send data until a 4th segment
+baytcp/tcp-full-bay.cc:57: *		calls tcp_output each time to (possibly) send a window
+baytcp/tcp-full-bay.cc:264:	//	if ESTABLISHED, just try to send more
+baytcp/tcp-full-bay.cc:290:	//	if ESTABLISHED, just try to send more
+baytcp/tcp-full-bay.cc:354: * see if we should send a segment, and if so, send it
+baytcp/tcp-full-bay.cc:364: * seqno, the next seq# we're going to send (snd_nxt), this will
+baytcp/tcp-full-bay.cc:394:	/* turn off FIN if there's really more to send */
+baytcp/tcp-full-bay.cc:421:	 * send now if a SYN or special flag "TF_ACKNOW" is set.
+baytcp/tcp-full-bay.cc:424:	 * kmn 8/28 need to send if there's a push
+baytcp/tcp-full-bay.cc:429:	return;		// no reason to send now
+baytcp/tcp-full-bay.cc:488: * Try to send as much data as the window will allow.  The link layer will 
+baytcp/tcp-full-bay.cc:498:	 * and there is something to send (t_seqno_ < curseq_+iss_)
+baytcp/tcp-full-bay.cc:541: * update segment to send next if appropriate
+baytcp/tcp-full-bay.cc:574:		t_seqno_ = highest_ack_;	// thing to send next
+baytcp/tcp-full-bay.cc:598:	output(seq, REASON_DUPACK);	// send one pkt
+baytcp/tcp-full-bay.cc:615:	//first cut, send if anything to ack. Might need maxseg_
+baytcp/tcp-full-bay.cc:627: *	delayed send (randomization) timer (TCP_TIMER_DELSND)
+baytcp/tcp-full-bay.cc:660:                 * delayed-send timer, with random overhead
+baytcp/tcp-full-bay.cc:952:			 * make sure we send at most 2 packets due to this ack
+baytcp/tcp-full-bay.cc:1093:			// send an ACK to the other side right now.
+baytcp/tcp-full-bay.cc:1246:	// the simulation is running and we want to send a SYN.
+baytcp/ftps.cc:84:    //tells tcp-full with my mods to send FIN when empty
+CHANGES.html:69:<li> added new feature to support a limited size send buffer at the data
+CHANGES.html:72:     0 which means there is no constraint on the send buffer.
+CHANGES.html:80:<li> new validation tests for NR-SACKs and limited send buffer size are added to
+CHANGES.html:407:   <li> HbAfterRto algorithm now does not send a heartbeat if the timeout
+CHANGES.html:702:support to send scan packets.
+CHANGES.html:863:Fixed a synchronisation bug in smac that resulted in 2 neighbor nodes not hearing each other as one sleeps when other is awake. Now all nodes wait for SYNCPERIOD and then try to send out a sync pkt. Any node that receives a sync pkt for the firsttime resets its schedule to match that of its neighbor. Essentially all nodes follow the same schedule.
+CHANGES.html:952:application, so that TFRC can send a packet immediately when new data  
+CHANGES.html:954:for the next send timer to expire.
+CHANGES.html:3574:changes to full-tcp so that the slow-start due to long send idle periods
+CHANGES.html:4173:when the RED algorithm decides to send an ECN notification. By default,
+CHANGES.html:4229:Add scheme for SRM agents to send log-scaled session messages based on
+CHANGES.html:5224:TcpAgent::send to TcpAgent::send_much.
+CHANGES.html:5807:to make it so that when they send a packet they become blocked rather than
+common/message.cc:88: * $proc send $msg
+common/ivs.cc:195:				 * increase send rate.
+common/ivs.cc:421:	 * send a response if we're congested and its over an rtt since
+common/tp.cc:26:  printf("send %f %u %d %u %d %d\n",
+common/ttl.cc:72:			/* XXX should send to a drop object.*/
+common/ttl.cc:105:			/* XXX should send to a drop object.*/
+common/Encapsulator.cc:82:			// even if it's zero, it's OK, we'll just not send to such
+common/tpm.cc:57:// Timer to send requests
+common/tpm.cc:153:	// we can send packets to anybody with twinks...
+common/tpm.h:66:// Data structure for the timer to send requests
+Binary file common/tp.o matches
+config.guess:31:# Please send patches to <config-patches@gnu.org>.  Submit a context
+config.guess:1492:send the following data and any information you think might be
+config.sub:34:# Please send patches to <config-patches@gnu.org>.  Submit a context
+cpplibs/stm.cc:63:	double rate_;     /* send rate during on time (bps) */
+dccp/dccp.h:63://send delay for send timer
+dccp/dccp.h:66:#define DCCP_SB_SIZE 1000   //maximum number of packets in the send buffer 
+dccp/dccp.h:145:/* The DCCPSendTimer models the time it takes to send a packet */
+dccp/dccp.h:167: * to send a packet.
+dccp/dccp.h:209:	DCCPSendTimer* timer_snd_;        //send timer
+dccp/dccp.h:210:	double snd_delay_;    //the delay of the send timer
+dccp/dccp.h:256:	DCCPSendBuffer* sb_;  //send buffer. Contains packet sizes to send.
+dccp/dccp.h:257:	bool infinite_send_;  //send an unlimited amount of data
+dccp/dccp.h:269:	bool send_ack_;     //send an ack
+dccp/dccp.h:293:	bool send_ackv_;       //if true, send ack vector on all acks 
+dccp/dccp.h:303:	int sb_size_;           //send buffer size
+dccp/dccp.h:355:	 * arg: try_pure_ack - if true, try to send a pure ack if cc
+dccp/dccp.h:356:	 *                     refuses to send a dataack
+dccp/dccp.h:451:	/* Ask sender permission to send a packet
+dccp/dccp.h:469:	 * If this function would like to send a packet, set output_ = true
+dccp/dccp.h:477:	 * If this function would like to send a packet, set output_ = true
+dccp/dccp_ackv.cc:143:		fprintf(stderr, "DCCPAckVector::addToAckHistory - Sequence number to send is old! (seqnum %d < seq_sent_ %d)\n",seqnum, elm->seq_sent_);
+dccp/dccp_sb.cc:108:/* Print send buffer contents and state (for debug) */
+dccp/dccp_tcplike.h:208:	int ackv_size_lim_;        //send an ack of ack if recv ackv >= this
+dccp/dccp_tcplike.h:211:	/* Clear the send history */
+dccp/dccp_tcplike.h:214:	/* Find a specific packet in the send history
+dccp/dccp_tcplike.h:223:	/* Remove packets from send history
+dccp/dccp_tcplike.h:230:	/* Prints the contents of the send history */
+Binary file dccp/dccp_tfrc.o matches
+dccp/dccp_tfrc.cc:79:/* Clear the send history */
+dccp/dccp_tfrc.cc:94:/* Find a specific packet in the send history
+dccp/dccp_tfrc.cc:108:/* Remove packets from send history
+dccp/dccp_tfrc.cc:131:/* Prints the contents of the send history */
+dccp/dccp_tfrc.cc:474:/* Calculate the receive rate to send on feedbacks
+dccp/dccp_tfrc.cc:733:					//trim send history
+dccp/dccp_tfrc.cc:1194:		//make sure we schedule next send time
+dccp/dccp_tfrc.cc:1241:/* Find the loss event rate corresponding to a send rate
+dccp/dccp_tfrc.cc:1245: *       x - send rate (in bytes/s)
+dccp/dccp_tfrc.cc:1273:/* Set the send timer
+dccp/dccp_tfrc.cc:1279:	/* set send timer to expire in t_ipi - (t_now-t_nom_old) 
+dccp/dccp_tfrc.cc:1317:		debug("%f, DCCP/TFRC(%s)::tfrc_updateX() - Updated send rate to %f bytes/s (p > 0, %f)\n", now(), name(), (double) s_x_, (double) s_p_);
+dccp/dccp_tfrc.cc:1321:			debug("%f, DCCP/TFRC(%s)::tfrc_updateX() - Oscillation prevention adjusted send rate to %f bytes/s (p > 0, %f)\n", now(), name(), (double) s_x_inst_, (double) s_p_);
+dccp/dccp_tfrc.cc:1335:			debug("%f, DCCP/TFRC(%s)::tfrc_updateX() - Updated send rate to %f bytes/s (p == 0, %f)\n", now(), name(), (double) s_x_, (double) s_p_);
+dccp/dccp_tfrc.cc:1337:			debug("%f, DCCP/TFRC(%s)::tfrc_updateX() - Did not update send rate (p == 0, %f)\n", now(), name(), (double) s_p_);
+dccp/dccp_tfrc.cc:1349:		/* half send rate */
+dccp/dccp_tfrc.cc:1355:		debug("%f, DCCP/TFRC(%s)::tfrc_time_no_feedback() - Updated send rate to %f bytes/s\n", now(), name(), (double) s_x_);
+dccp/dccp_tfrc.cc:1444:		debug("%f, DCCP/TFRC(%s)::tfrc_send_packet() - DCCP asks for permission to send the first data packet\n", now(), name());
+dccp/dccp_tfrc.cc:1446:		s_t_nom_ = now();  /* set nominal send time for initial packet */
+dccp/dccp_tfrc.cc:1455:		/* start send timer */
+dccp/dccp_tfrc.cc:1579:		if(datasize <= 0){ /* we have ack (which never can have more to send?!?!?!?) (or simulate a sent packet to schedule send timer) */
+dccp/dccp_tfrc.cc:1590:			/* loop until we find a send time in the future */
+dccp/dccp_tfrc.cc:1727:		/* Update next send time */
+dccp/dccp_tfrc.cc:1728:		s_t_nom_ -= s_t_ipi_;   /* revert to previous send time */
+dccp/dccp_tfrc.cc:1732:		s_t_nom_ += s_t_ipi_; /* a new next send time */
+dccp/dccp_tfrc.cc:1743:		tfrc_send_packet_sent(NULL,0,-1); /* make sure we schedule next send time */
+dccp/dccp_tfrc.cc:1850:/* Prepare and send a feedback packet */
+dccp/dccp_tfrc.cc:2154:			/* check send conditions then send */
+Binary file dccp/dccp_tcplike.o matches
+dccp/dccp_sb.h:34:/* A (circular) send buffer consisting of packet sizes */
+dccp/dccp_sb.h:77:	/* Print send buffer contents and state (for debug) */
+Binary file dccp/dccp.o matches
+dccp/dccp.cc:623: * arg: try_pure_ack - if true, try to send a pure ack if cc
+dccp/dccp.cc:624: *                     refuses to send a dataack
+dccp/dccp.cc:692:				//we had a DCCP-DataAck packet, try to send a pure ack
+dccp/dccp.cc:713:		if (send_ack_){  //we are going to send an ack
+dccp/dccp.cc:778:	//send packet
+dccp/dccp.cc:792:	if (moreToSend)  //try to send more data if available
+dccp/dccp.cc:1350:/* Ask sender permission to send a packet
+dccp/dccp.cc:1379: * If this function would like to send a packet, set output_ = true
+dccp/dccp.cc:1388: * If this function would like to send a packet, set output_ = true
+dccp/dccp.cc:1635:			//resend the RESPONSE
+dccp/dccp.cc:1777:			fprintf(stdout, "%f, DCCP(%s)::sendmsg() - Application tries to send 0 byte of data\n",
+dccp/dccp.cc:1781:			debug("%f, DCCP(%s)::sendmsg() - Infinite send activated\n",
+Binary file dccp/dccp_ackv.o matches
+dccp/dccp_tcplike.cc:82:/* Clear the send history */
+dccp/dccp_tcplike.cc:97:/* Find a specific packet in the send history
+dccp/dccp_tcplike.cc:111:/* Remove packets from send history
+dccp/dccp_tcplike.cc:134:/* Prints the contents of the send history */
+dccp/dccp_tcplike.cc:216:		fprintf(stdout, "Packet history is empty (send recv)\n");
+dccp/dccp_tcplike.cc:218:		fprintf(stdout, "Packet history (send recv):\n");
+dccp/dccp_tcplike.cc:371:			//check quiescence and send ack of ack if needed
+dccp/dccp_tcplike.cc:387:		//check quiescence and send ack of ack if needed
+dccp/dccp_tcplike.cc:660:		//add data packets to send history
+dccp/dccp_tcplike.cc:689:		debug("%f, DCCP/TCPlike(%s)::send_packetRecv() - Insertion in send recv history failed for seqnum %d\n", now(), name(), packet->seq_num_);
+dccp/dccp_tcplike.cc:696:			debug("%f, DCCP/TCPlike(%s)::send_packetRecv() - Ack loss detected (send recv) in %d - %d\n" , now(), name(), seq_start, seq_end);
+dccp/dccp_tfrc.h:211:	TracedDouble s_x_inst_;           /* Instantaneous send rate */
+dccp/dccp_tfrc.h:219:	double s_x_inst_;           /* Instantaneous send rate */
+dccp/dccp_tfrc.h:226:	double s_initial_x_;        /* Initial send rate (in bytes/s) */
+dccp/dccp_tfrc.h:240:	double   s_x_calc_;         /* Calculated send rate (bytes/s) */ 
+dccp/dccp_tfrc.h:255:	double   s_t_nom_,          /* Nominal send time of next packet */
+dccp/dccp_tfrc.h:271:	/* Clear the send history */
+dccp/dccp_tfrc.h:274:	/* Find a specific packet in the send history
+dccp/dccp_tfrc.h:283:	/* Remove packets from send history
+dccp/dccp_tfrc.h:290:	/* Prints the contents of the send history */
+dccp/dccp_tfrc.h:298:	/* Set the send timer
+dccp/dccp_tfrc.h:316:	/* Find the loss event rate corresponding to a send rate
+dccp/dccp_tfrc.h:320:	 *       x - send rate (in bytes/s)
+dccp/dccp_tfrc.h:430:	/* Calculate the receive rate to send on feedbacks
+dccp/dccp_tfrc.h:454:	/* Prepare and send a feedback packet */
+delaybox/delaybox.cc:679:	double time_to_send = flow->queue_->add(p, time + delay, 
+delaybox/delaybox.cc:693:		flow->timer_->sched(time_to_send - time);
+delaybox/delaybox.cc:696:			 time_to_send - time);
+delaybox/delaybox.cc:764:		 * send a FIN and it's entry will then
+diffusion/diff_rate.cc:119:  num_data_bcast_send = 0;
+diffusion/diff_rate.cc:121:  num_neg_bcast_send = 0;
+diffusion/diff_rate.cc:413:     printf("DF node %x will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:491:	printf("DF node %x will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:518:	  printf("DF node %x will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:585:    printf("DF node %x will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:615:	printf("DF node %x will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:736:      printf("DF node %d will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:754:      printf("DF node %d will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:857:      printf("DF node %d will send %s to %x\n",
+diffusion/diff_rate.cc:883:    printf("DF node %d will send %s to %x\n",
+diffusion/diff_rate.cc:909:      printf("DF node %d will send %s to %x\n",
+diffusion/diff_rate.cc:944:      printf("DF node %d will send %s (%x, %x, %d) to %x\n",
+diffusion/diff_rate.cc:980:    printf("Node %d DATA TYPE %d: send bcast data %d, not send  %d, rcv %d\n", 
+diffusion/diff_rate.cc:983:    printf("Node %d neg bcast send %d, neg bcast rcv %d\n",
+diffusion/diff_rate.cc:987:      printf("DF node %d has oif %d (%f,%d) send data %d recv neg %d pos %d\n", 
+diffusion/diff_rate.cc:997:      printf("Node %d recv new sub %d,new org %d,old org %d:send neg %d pos %d\n", 
+diffusion/iflist.h:192:    num_neg_send = 0;
+diffusion/iflist.h:193:    num_pos_send = 0;
+Binary file diffusion/diff_prob.o matches
+diffusion/diff_sink.cc:206:      // printf("Source %s send packet (%x, %d) at %lf.\n", name(), 
+diffusion/diff_sink.cc:250:      // printf("Sink %s send packet (%x, %d) at %f to %x.\n", 
+diffusion/diff_sink.cc:293:  printf("SINK %d : TYPE %d : terminates (send %d, recv %d, cum_delay %f)\n", 
+diffusion/diff_sink.cc:390:      //      printf("I got a data request for data rate %d at %lf. Will send it right away.\n",
+diffusion/routing_table.cc:222:  perror("Hey man. How come you send me the negative reinforment?\n");
+Binary file diffusion/diff_rate.o matches
+diffusion/diff_prob.cc:118:  num_neg_bcast_send = 0;
+diffusion/diff_prob.cc:423:	// If not, send inhibit signal upstream
+diffusion/diff_prob.cc:525:      printf("DF node %x will send data (%x, %x, %d) to %x\n",
+diffusion/diff_prob.cc:570:  // YES, we are in backtracking mode so send TX_FAILED to the forwarder.
+diffusion/diff_prob.cc:712:    printf("Node %d neg bcast send %d, neg bcast rcv %d\n",
+diffusion/diff_prob.cc:716:      printf("DF node %d has oif %d (%f,%d) send data %d recv neg %d pos %d\n", 
+diffusion/diff_prob.cc:730:      printf("Diffusion node %d has down oif %d (%f, %d) send %d\n", 
+diffusion/diff_prob.cc:897:    // If not, send inhibit signal upstream. **
+diffusion3/lib/dr.cc:439:  // Check the send attributes
+diffusion3/lib/dr.cc:442:	      "Error : Invalid class/scope attributes in send attributes !\n");
+diffusion3/lib/dr.cc:447:  // Check if it is time to send another exploratory data message
+diffusion3/lib/dr.cc:492:  // Now, we add the send attributes
+diffusion3/lib/dr.cc:529:    DiffPrint(DEBUG_ALWAYS, "sendRMST - can't find blob to send !\n");
+diffusion3/lib/main/iodev.hh:46:// API). It provides basic functionality to send and receive packets
+diffusion3/lib/main/config.hh:126:// Use single send when forwarding data
+diffusion3/lib/main/config.hh:148://  Use single send when forwarding data
+diffusion3/lib/main/config.hh:170:// Use single send when forwarding data
+diffusion3/lib/main/config.hh:193:// Use single send when forwarding data
+Binary file diffusion3/lib/dr.o matches
+diffusion3/filter_core/filter_core.cc:787:  //          list. Then, we send to the next guy. If there is
+diffusion3/filter_core/filter_core.cc:788:  //          no other filter in the list, we try to send it to
+diffusion3/CHANGES:175:  used to send a message along a pre-specified path.
+diffusion3/filters/diffusion/one_phase_pull.cc:606:	// Time expired, send disinterest message
+diffusion3/filters/diffusion/one_phase_pull.cc:1244:	// and send an interest message to the local sink
+diffusion3/filters/diffusion/one_phase_pull.cc:1321:      // If there are no other gradients we need to send our own
+diffusion3/filters/diffusion/two_phase_pull.cc:690:    // We could not find a reinforced path, so we send a negative
+diffusion3/filters/diffusion/two_phase_pull.cc:1093:	// and send an interest message to the local agent
+diffusion3/filters/diffusion/two_phase_pull.cc:1258:	// we need to send our own negative reinforcement
+diffusion3/filters/gear/gear.cc:304:      // reply and send it after some random time. But this has to be
+diffusion3/filters/gear/gear.cc:803:  // Check if we need to send a beacon request to update our neighbor
+diffusion3/filters/gear/gear.hh:87:  GEO_REQUEST = 1, // Beacon request. Nodes should send a beacon reply
+diffusion3/filters/gear/gear.hh:93:		   // (for a given destination). It is send only if
+diffusion3/filters/rmst/rmst_filter.cc:130:  // Otherwise we send it back to the core (by returning true).
+diffusion3/filters/rmst/rmst_filter.cc:293:      // If we got the upstream send count - update it in Rmst.
+diffusion3/filters/rmst/rmst_filter.cc:314:            // Now send an EXP_REQ!
+diffusion3/filters/rmst/rmst_filter.cc:318:            // We need to send a negative reinforcement on blacklisted link!
+diffusion3/filters/rmst/rmst_filter.cc:353:      // Sources collect all fragments and send them from a timer.
+diffusion3/filters/rmst/rmst_filter.cc:354:      // Sinks collect all fragments and send them to the app when they
+diffusion3/filters/rmst/rmst_filter.cc:471:      // we must send a new EXPLORATORY message;  else if we are not the source,
+diffusion3/filters/rmst/rmst_filter.cc:472:      // we must send and exp request upstream.
+diffusion3/filters/rmst/rmst_filter.cc:490:          DiffPrint(DEBUG_SOME_DETAILS, "  send Exp Request upstream!\n");
+diffusion3/filters/rmst/rmst_filter.cc:650:    // send Ack, give to local sinks.
+diffusion3/filters/rmst/rmst_filter.cc:666:      // If this is a source, we only send out the fragments when we've got
+diffusion3/filters/rmst/rmst_filter.cc:668:      // Rmst to the send_list_, and if there is no send timer we start one.
+diffusion3/filters/rmst/rmst_filter.cc:671:        // The Rmst is complete and this is a source - put in send list.
+diffusion3/filters/rmst/rmst_filter.cc:678:          // Now add a timer to send this and any NAKS.
+diffusion3/filters/rmst/rmst_filter.cc:680:            "  Rmst %d ready to send - Set a SEND_TIMER\n", rmst_no);
+diffusion3/filters/rmst/rmst_filter.cc:749:      // intermediate node (Sinks don't get ACKs, they send them).
+diffusion3/filters/rmst/rmst_filter.cc:781:      DiffPrint(DEBUG_IMPORTANT, "  Too many NAKs - send an EXPLORATORY msg!\n");
+diffusion3/filters/rmst/rmst_filter.cc:787:    // we send it again.
+diffusion3/filters/rmst/rmst_filter.cc:793:        // Resend an EXP_REQ!!!
+diffusion3/filters/rmst/rmst_filter.cc:810:    // We need to send the naked fragments if we are the source,
+diffusion3/filters/rmst/rmst_filter.cc:843:          DiffPrint(DEBUG_IMPORTANT, "  not forwarding NAK! - no place to send it!\n");
+diffusion3/filters/rmst/rmst_filter.cc:864:            // Now add a timer to send this and any NAKS.
+diffusion3/filters/rmst/rmst_filter.cc:903:      // in the send list (lowest of nak or send Lists), and set this
+diffusion3/filters/rmst/rmst_filter.cc:980:      DiffPrint(DEBUG_IMPORTANT, "  can't send NAK, no last_hop_!\n");
+diffusion3/filters/rmst/rmst_filter.cc:1002:    // Code to send a message to last_hop_
+diffusion3/filters/rmst/rmst_filter.cc:1035:  // If we have an ACK_TIMER active cancel it. We want to resend some packets.
+diffusion3/filters/rmst/rmst_filter.cc:1087:      // Now add a timer to send this and any NAKS.
+diffusion3/filters/rmst/rmst_filter.cc:1162:    // If we haven't got any NAKs pending, send the next fragment of the Rmst
+diffusion3/filters/rmst/rmst_filter.cc:1164:    // ourself. When we get a NAK, if this timer is active we send NAK responses
+diffusion3/filters/rmst/rmst_filter.cc:1165:    // here. Otherwise we can send them directly from the NAK response routine.
+diffusion3/filters/rmst/rmst_filter.cc:1177:        // the cleanup of this Rmst, then we send the fragment to last hop.
+diffusion3/filters/rmst/rmst_filter.cc:1186:          // We routinely send the packet sent count on NAKs.
+diffusion3/filters/rmst/rmst_filter.cc:1275:        // We send the MaxFragAttr on the first Exploratory packet,
+diffusion3/filters/rmst/rmst_filter.cc:1391:    // we send it again.
+diffusion3/filters/rmst/rmst_filter.cc:1398:        // Resend an EXP_REQ!!!
+diffusion3/filters/rmst/rmst_filter.cc:1404:        DiffPrint(DEBUG_LOTS_DETAILS, "  Node waits to send another EXP_REQ\n");
+diffusion3/filters/rmst/rmst_filter.cc:1475:    // If there has been no data sent for 30 seconds like a NAK response, we need to resend a packet.
+diffusion3/filters/rmst/rmst_filter.cc:1482:        // We should send the last frag again as an DATA packet.
+diffusion3/filters/rmst/rmst_filter.cc:1484:          "RmstFilter::processTimer ACK_TIMER, resend last packet as DATA\n");
+diffusion3/filters/rmst/rmst_filter.cc:1493:          "RmstFilter::processTimer ACK_TIMER, resend last packet as EXPLORATORY_DATA\n");
+diffusion3/filters/rmst/rmst_filter.cc:1509:        // We should send the last frag again as an DATA packet.
+diffusion3/filters/rmst/rmst_filter.cc:1511:          "RmstFilter::processTimer ACK_TIMER, resend last packet on new reinf path as DATA\n");
+diffusion3/filters/rmst/rmst_filter.cc:1677:  // New code to send a message to last_hop_
+diffusion3/filters/rmst/rmst_filter.hh:153:// tuned. The send timer in particular can be altered depending on
+Binary file diffusion3/filters/rmst/rmst_filter.o matches
+diffusion3/filters/rmst/README:37:sources call sendRmst, they should not send another large blob until
+diffusion3/apps/gear_examples/gear_sender.cc:260:  // Main thread will send ping probes
+diffusion3/apps/gear_examples/gear_sender.cc:264:    fprintf(stdout, "Press <Enter> to send a ping probe...");
+diffusion3/apps/ping/push_sender.cc:143:  // Main thread will send ping probes
+diffusion3/apps/ping/push_sender.cc:147:    fprintf(stdout, "Press <Enter> to send a ping probe...");
+diffusion3/apps/ping/1pp_ping_sender.cc:202:  // Main thread will send ping probes
+diffusion3/apps/ping/1pp_ping_sender.cc:206:    fprintf(stdout, "Press <Enter> to send a ping probe...");
+diffusion3/apps/ping/2pp_ping_sender.cc:201:  // Main thread will send ping probes
+diffusion3/apps/ping/2pp_ping_sender.cc:205:    fprintf(stdout, "Press <Enter> to send a ping probe...");
+doc/kfall/packet_format.tex:135:to send by calling \code{allocpkt()}, which handles assignment
+doc/kfall/delays.tex:35:		double txtime(Packet* p); /* time to send pkt p on this link */
+doc/kfall/intro.tex:35:To subscribe to the lists, send mail to {\tt majordomo@mash.cs.berkeley.edu}.
+doc/kfall/agents.tex:4:%        Connector::send is needed, but so is just send()... confusing
+doc/satellite.tex:626:This indicates that node 14, in trying to send a packet to node 15, could
+doc/satellite.tex:770:disconnected in the topology and then another node tries to send a packet
+doc/figures/cache-flowchart.obj:21:	"send cached page"]),
+doc/figures/cache-flowchart.eps:96:      431 18 moveto (send cached page) show
+doc/kannan/slides.tex:1191:      sessionDelay\_}$  to send next advertisement. 
+doc/nodes.tex:182:it is often the head of a link to send packets for that destination to,
+doc/packet_format.tex:163:to send by calling \fcn[]{allocpkt}, which handles assignment
+doc/xcp.tex:48:functions in XCP. XCP sources send additional information about their
+doc/queue_mgmt.tex:72:queue is able to send a packet immediately to its downstream neighbor.
+doc/queue_mgmt.tex:73:When a queue is blocked, it is able to enqueue packets but not send them.
+doc/queue_mgmt.tex:111:                         * We're not block.  Get a packet and send it on.
+doc/queue_mgmt.tex:146:If the queue is not blocked, it is allowed to send a packet and
+doc/queue_mgmt.tex:156:will send the next-scheduled packet downstream (and leave the queue blocked),
+doc/queue_mgmt.tex:267:blocked (unable to send a packet to its downstream neighbor). 
+doc/queue_mgmt.tex:317:\item[quantum\_] Indicates (in bytes) how much each flow can send during
+doc/tmix.tex:106:t 6304943                     # init waits 6.3 sec after send and then sends FIN
+doc/tmix.tex:170:before it can send its next ADU\@. In case 2, the \texttt{t} denotes
+doc/tmix.tex:172:from acceptor before it can send its next ADU\@. In case 3, the
+doc/tmix.tex:249:A 6304943 0 0               # acc waits 6.3 sec after send then sends FIN
+doc/tmix.tex:334:There are some connections where the acceptor sends the first ADU\@.  In reality, the initiator always sets up the TCP connection, but in ns-2 the connection is not setup until the first data bytes are sent.  In these cases, the acceptor will send the SYN to setup the connection and then will send its ADU\@.
+doc/tmix.tex:340:is that the last side (initiator or acceptor) to send an ADU will send
+doc/tmix.tex:488:Size of packets to construct and send (TCP MSS)
+doc/tmix.tex:531:  Output: sent last ADU, sent ADU, recv ADU, send next ADU delay}
+doc/delays.tex:36:                inline double txtime(Packet* p) \{ \* time to send pkt p on this link */
+doc/delays.tex:116:will directly send $p$ to its target.
+doc/lan.tex:380:it is a duplex object, it keeps a separate pointer for the send target,
+doc/applications.tex:67:a call to \code{send(numBytes)} causes TCP to increment its ``send buffer'' 
+doc/applications.tex:134:TCP agent will act as if its send buffer is continually replenished by the
+doc/applications.tex:140:submit, and serves as an implied close (so that TCP can send FIN with data).
+doc/applications.tex:238:      	        [$self agent] send -1;   # Send indefinitely
+doc/applications.tex:373:\code{maxpkts\_} & the maximum number of packets to send (default is (\(2^28\))\\
+doc/applications.tex:460:\code{send n} & similar to \code{producemore}, but sends $n$ bytes instead of
+doc/tcp.tex:43:The second part describes the internals of the base send agent,
+doc/tcp.tex:349:This TCP can also be configured to send data on the initial SYN
+doc/tcp.tex:351:Future changes to FullTCP may include a modification to send the
+doc/tcp.tex:395:Agent/TCP/FullTcp set iss_ 0 \; initial send sequence number;
+doc/tcp.tex:397:Agent/TCP/FullTcp set data_on_syn_ false \; send data on initial SYN?;
+doc/tcp.tex:426:managing the send window, and handling timeouts.
+doc/tcp.tex:439:reason_ \* set by sender when (re)transmitting to trace reason for send */
+doc/tcp.tex:447:attempts to send as many packets as the current sent window allows.
+doc/tcp.tex:461:The usable send window at any time is given by the function {\bf window()}.
+doc/tcp.tex:494:checks for the presence of the ECN bit (reducing the send window if
+doc/timers.tex:219:         * {\cf delayed-send timer, with random overhead}
+doc/emulation.tex:118:Tap agents are able to send and receive packets to/from an
+doc/packmime.tex:93:\item{send the first HTTP request to the server}
+doc/packmime.tex:115:\item{send a FIN to close the connection}
+doc/mobility.tex:455:  send and receive packets.
+doc/mobility.tex:468:  each node has a data transmission slot to send packets.
+doc/mobility.tex:475:  there is a packet to send and receive.
+doc/mobility.tex:549:send back either by intermediate nodes or the 
+doc/mobility.tex:816:                mh->dh_duration,       // expected time to send data 
+doc/mobility.tex:847:time to send this data pkt over the wireless channel is a2 (hex2dec
+doc/mobility.tex:913:\item[s] send 
+doc/mobility.tex:1237:generates an ad that is send directly to the requesting MH. The
+doc/webcache.tex:8:One such example is web caching, where we want HTTP servers to send HTTP 
+doc/webcache.tex:199:In order to send application data in binary form, TcpApp provides a 
+doc/webcache.tex:239:        $ns at 1.0 "$app1 send 100 \bs"$app2 app-recv 100\bs""
+doc/webcache.tex:306:send \tup{client} \tup{bytes} \tup{callback} & send \$bytes of data to 
+doc/webcache.tex:309:connect \tup{client} \tup{TCP} & associate a TCP agent with \$client (Http object). That agent will be used to send packets \emph{to} \$client. \\
+doc/webcache.tex:824:send a request of page \$pageid and type \$type to \$server. The only 
+doc/webcache.tex:949:Checks the validatity of the cached page. If it's valid, send \$client
+doc/webcache.tex:1103:    E & MISS & Cache miss. In this case the cache will send a request to the
+doc/webcache.tex:1122:    S & SND & Server send a response. \\
+doc/srm.tex:170:There are loss recovery objects to send request and repair messages.
+doc/srm.tex:240:retransmission is received, serviceTime is the time send a repair,
+doc/srm.tex:674:  to send the actual request at the appropriate moment.
+doc/srm.tex:689:  The \proc[]{schedule} schedules an event to send a request
+doc/srm.tex:697:It invokes ``\code{$agent_} send request \tup{args}'' to send the request.
+doc/srm.tex:718:  it will cancel its send event and re-schedule another one,
+doc/srm.tex:738:  to send a request, and \code{eventID_} will point to that event.
+doc/srm.tex:794:itself send a request in the first round. 
+doc/srm.tex:842:to send a session message after \code{sessionDelay_} seconds.
+doc/srm.tex:845:it will schedule to send the next one after some interval.
+doc/agents.tex:4:%        Connector::send is needed, but so is just send()... confusing
+doc/agents.tex:295:                [$self agent] send -1
+doc/agents.tex:299:\code{send -1} is analogous to sending an arbitrarily large file.
+doc/agents.tex:331:to send the packet downstream one hop.
+doc/agents.tex:423:invoked which attempts to send more data if the TCP window allows.
+doc/agents.tex:437:a delayed send timer \code{delsnd_timer_} 
+doc/agents.tex:513:The \fcn[]{timeout} method is used to periodically send request packets.
+doc/agents.tex:547:to send the packet to the next downstream node, \fcn[]{Connector::send}
+doc/agents.tex:784:source can send in response to a single incoming ACK. 
+doc/sctp.tex:113:      send data to a destination and does not know which outgoing
+doc/sctp.tex:115:      route lookup. Then, the SCTP agent performs the send from the
+doc/sctp.tex:207:	 send debug output to the same file. The default is -1.  Note:
+doc/multicast.tex:208:downstream receivers, send a prune upstream.  A prune message causes
+doc/multicast.tex:649:        send a prune back.\\
+doc/namtrace.tex:404:STDIN. Here is a little tutorial on how to send a nam trace stream to nam to
+doc/namtrace.tex:493:periodically send nam events even if nothing has happened. We have 
+doc/namtrace.tex:540:One other thing to remember is that your application should send these events
+doc/namtrace.tex:574:'h' send the packet to the next hop which actually causes the animation
+doc/namtrace.tex:582:To show a packet being send from one particular node to another use the
+doc/diffusion.tex:13:Directed Diffusion is a method of data dissemination especially suitable in distributed sensing scenarios. It differs from IP method of communication. For IP ``nodes are identified by their end-points, and inter-node communication is layered on an end-to-end delivery service provided within the network''. Directed diffusion, on the other hand is data-centric. Data generated by sensor nodes are identified by their attribute-value pair. Sinks or nodes that request data send out ``interest''s into the network. Data generated by ``source'' nodes that match these interests, ``flow'' towards the sinks. Intermediate nodes are capable of caching and transforming data. For details on directed diffusion, see  
+doc/diffusion.tex:19:The directed diffusion model consists of a core diffusion layer, a diffusion library provides an application programming interface for overlying diffusion applications and finally the application layer which includes both diffusion applications and filters. The core diffusion layer is used to receive/send out packets from/into the network. The library provides a interface for the overlying application classes for publishing/subscribing etc. These APIs have been described in details in a document called Network Routing API 8.0 and can be found at 
+doc/diffusion.tex:47:The above Figure~\ref{fig:filter} is from SCADDS' network routing API document available from their homepage (URL given earlier). The document describes attribute factories, matching rules for attributes, how applications interface with the core diffusion layer, and filter/timer APIs. All messages coming from/going out in the network is received at/sent out from the core diffusion layer. Messages can also come to core-diffusion layer from local applications and/or filters that might be connected to the node. The applications use the publish/subscribe/send interface to send interest and data messages to the network.
+doc/diffusion.tex:87:The first function creates interest attributes that matches with data attributes it (the sender) has to offer. Next it calls the dr-library function subscribe(). The subscription is used by the ping-sender to create an internal state against which attributes for interests received from the network are matched against. Incase of a match, the matching data is sent outinto the network. Function setupPublication() create attributes for the data it has to offer and calls the library function publish() which inturn returns a publish handle. The ping-sender uses this handle to periodically send out data which is forwarded by the gradient to core-diffusion to be sent out into the network only if it finds a matching interest.
+doc/unicast.tex:432:such changes, in case any of these protocols wants to send a fresh update.
+doc/unicast.tex:729:will send an implicit update whenever their routes change,
+doc/unicast.tex:795:In a dynamic routing strategy, nodes send and receive messages,
+doc/unicast.tex:832:invokes \proc[]{send-updates} to send the actual updates.
+doc/unicast.tex:838:will send updates to a select set of peers.
+doc/unicast.tex:840:the procedure will send updates to all peers.
+doc/unicast.tex:842:the procedure will send updates to the adjacent peers on those incident
+doc/unicast.tex:847:to send the actual updates.
+doc/unicast.tex:853:to send the actual update.
+dsdv/dsdv.cc:66:   to send a triggered update?  If undef'd, we'll only trigger on
+dsdv/dsdv.cc:152: // send a triggered update (or a full update if one's needed)
+dsdv/dsdv.cc:274:	      // send out update packet jitter to avoid sync
+dsdv/dsdv.cc:446:  // The packet we send wants to be broadcast
+dsdv/dsdv.cc:527:	{ // don't send out routes that shouldn't be advertised
+dsdv/dsdv.cc:787:      // see if we can send off any packets we've got queued
+dsdv/dsdv.cc:994:  // send out bcast pkt with jitter to avoid sync
+dsr/dsragent.h:186:  /* obtain a source route to p's destination and send it off */
+dsr/dsragent.h:202:  // take packet and send it out packet must a have a route in it
+dsr/dsragent.h:231:  // if needed, send the remainder of the errors to the next person
+dsr/dsragent.h:242:     message to send to the orginator of the pkt (srh[0]) 
+dsr/dsragent.h:255:  // see if any packets in send buffer need route requests sent out
+dsr/dsragent.h:274:  // schedule a time to send new_p if we haven't heard a better
+dsr/dsragent.h:281:  /* the following variables are used to send end-of-sim notices to all objects */
+dsr/dsragent.cc:102: *  May an intermediate node send a propagating Route Request for
+dsr/dsragent.cc:157:// should we send gratuitous replies to effect route shortening?
+dsr/dsragent.cc:167:// should we send a non-propagating route request as the first action
+dsr/dsragent.cc:187:// hold off and not send it for a while?
+dsr/dsragent.cc:211: packets from the send buff is the StickPktIn routine, or the route reply
+dsr/dsragent.cc:261:    trace("Sdebug %.5f _%s_ stuck into send buff %s -> %s",
+dsr/dsragent.cc:286:  // see if any packets in send buffer need route requests sent out
+dsr/dsragent.cc:322:// look at the entry and decide if we can send another route
+dsr/dsragent.cc:697:  /* obtain a source route to p's destination and send it off.
+dsr/dsragent.cc:748:      // (we'll send off any packet's we have queued and waiting)
+dsr/dsragent.cc:975:      // maybe we should send this packet back as an error...
+dsr/dsragent.cc:1220:  // make up and send out a route reply
+dsr/dsragent.cc:1261:     // take packet and send it out, packet must a have a route in it
+dsr/dsragent.cc:1571:	  // it's not time to send another route request...
+dsr/dsragent.cc:1765:  // see if the addtion of this route allows us to send out
+dsr/dsragent.cc:1793:	  /* we need to spread out the rate at which we send packets
+dsr/dsragent.cc:1850:  // send the packet to the person listed in what's now the last entry
+dsr/dsragent.cc:1873:// if needed, send the remainder of the errors to the next person
+dsr/dsragent.cc:1927:  /* make a copy of the packet and send it to the next tell_addr on the
+dsr/dsragent.cc:1943:  // send the packet to the person listed in what's now the last entry
+dsr/dsragent.cc:2341:	  // be nice and send the packet out
+dsr/dsragent.cc:2619:     message to send to the orginator of the pkt (srh[0])
+dsr/dsragent.cc:2733:    { // no need to send the route error if it's for us
+dsr/dsragent.cc:2735:        trace("Sdebug _%s_ not bothering to send route error to ourselves", 
+dsr/dsragent.cc:2799:  /* send out the Route Error message */
+dsr/dsragent.cc:2814:  send a packet to D via a route of length <= ours then don't send
+dsr/dsragent.cc:2836:// send buffer and expire it if it is
+dsr/dsragent.cc:2846:  // than ours then send our reply.
+dsr/dsragent.cc:2865:  // schedule a time to send new_p if we haven't heard a better
+dsr/dsragent.cc:2896:      // going to send our route reply unless we hear the requester use one
+dsr/sr_forwarder.cc:169:      this->recv(p,0);		// send back to forwarder to send this out
+dsr/sr_forwarder.h:81:  NsObject* target_;		/* where to send forwarded pkts */
+dsr/sr_forwarder.h:82:  DSRProto* route_agent_;	        /* where to send unforwardable pkts */
+emulate/tcptap.cc:496:  // send packet into the live network
+emulate/tap.cc:240:	// send packet into the live network
+emulate/emtcp.tcl:3:# send an icmp redirect to our "target" machine.  The target is
+emulate/emtcp.tcl:113:	$agent_(icmp) send redirect $gwip $targetip $dstip $dummyip
+emulate/em.tcl:3:# send out whatever they are given
+emulate/net-ip.cc:131:	Socket ssock_;			// socket to send on
+emulate/net-ip.cc:198: * UDPIP::send -- send "len" bytes in buffer "buf" out the sending
+emulate/net-ip.cc:224:			 * incorrectly send port unreachables for 
+emulate/net-ip.cc:261:			 * UDP probably aborted the send because of them --
+emulate/net-ip.cc:262:			 * try exactly once more.  E.g., the send we
+emulate/net-ip.cc:265:			 * send now.
+emulate/net-ip.cc:271:			fprintf(stderr, "UDPIPNetwork(%s): send failed: %s\n",
+emulate/net-ip.cc:367:  "UDPIPNetwork(%s): open: cannot set send sockbuf size to %d bytes, using default\n",  
+emulate/net-ip.cc:577:// For raw sockets on linux the send does not work,
+emulate/net-ip.cc:707:	// obtain a raw socket we can use to send ip datagrams
+emulate/icmp.cc:87: * sendredirect -- send a packet to "target" containing a redirect
+emulate/icmp.cc:104:	// make an IP packet ready to send to target
+emulate/icmp.cc:136:		// $obj send name src dst [...stuff...]
+emulate/icmp.cc:140:				// $obj send redirect src target dst gwaddr
+emulate/icmp.cc:141:				// as src, send to targ, so that it changes
+emulate/em2.tcl:3:# send out whatever they are given
+emulate/iptap.cc:246:  // send packet into the live network
+emulate/iptap.cc:259:    recalculate the checksum and send the packet on it's
+emulate/net-pcap.cc:422:/* send a packet out through the packet filter */
+emulate/arp.cc:226: * resp: who to send response to
+ftp:496:./tcl/test/test-suite-sack.tcl:    $ns_ at 0.01 "$ftp1 send $bytesToSend"
+ftp:600:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:602:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:604:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:606:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:608:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:610:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:612:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:614:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:616:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:620:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:622:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:624:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:626:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:628:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 1452000"
+ftp:630:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 58080000"
+ftp:644:./tcl/test/test-suite-sctp.tcl:    $ns at 0.0 "$ftp0 send 14520000"
+ftp:682:./tcl/test/test-suite-simple-full.tcl:	$ns_ at 1.0 "$ftp1 send $bytes_ftp"
+ftp:720:./tcl/test/test-suite-simple.tcl:	$ns_ at 1.0 "$ftp1 send $bytes_ftp"
+gaf/gaf.cc:399:    // send discovery first to try to find whether
+gaf/gaf.cc:506:      // must send real msg because I am the leader
+gaf/gaf.cc:542:  //printf("Node %d send out Exitence msg gid/nid %d %d\n", nid_, gid_, nid_);
+gaf/gaf.h:60:#define MIN_DISCOVERY_TIME 1    // min interval to send discovery
+gaf/gaf.h:61:#define MAX_DISCOVERY_TIME 15   // max interval to send discovery
+gaf/gaf.h:65:#define MAX_DISCOVERY   10      // send selection after 10 time try
+Binary file gen/ns_tcl.o matches
+gen/ns_tcl.cc:2297:[$self agent] send -1\n\
+gen/ns_tcl.cc:2305:Application/FTP instproc send {nbytes} {\n\
+gen/ns_tcl.cc:2306:[$self agent] send $nbytes\n\
+gen/ns_tcl.cc:8963:Agent/Mcast/Control instproc send {type from src group args} {\n\
+gen/ns_tcl.cc:8966:$self cmd send $type $mcounter\n\
+gen/ns_tcl.cc:9577:$mctrl_ send $which [$node_ id] $src $group\n\
+gen/ns_tcl.cc:10421:$mctrl_ send $which [$node_ id] $dst $group\n\
+gen/ns_tcl.cc:11324:$agent_ send request $round_ $sender_ $msgid_\n\
+gen/ns_tcl.cc:11423:$agent_ send repair $round_ $sender_ $msgid_\n\
+gen/ns_tcl.cc:11481:$agent_ send session\n\
+gen/ns_tcl.cc:12532:$ctrl_ send $msg\n\
+gen/ns_tcl.cc:13815:$self send $client $size \\\n\
+gen/ns_tcl.cc:13909:$self send $c $size \\\n\
+gen/ns_tcl.cc:13936:$self send $pcache_ [$self get-joinsize] \\\n\
+gen/ns_tcl.cc:14006:$self send $pcache_ $size \\\n\
+gen/ns_tcl.cc:14147:$self send $server $size \\\n\
+gen/ns_tcl.cc:14253:$self send $cl $data(size) \\\n\
+gen/ns_tcl.cc:14296:$self send $client $size \\\n\
+gen/ns_tcl.cc:14428:$self send $cl $size \\\n\
+gen/ns_tcl.cc:14621:$self send $parent_ $size \\\n\
+gen/ns_tcl.cc:14650:$self send $par [$self get-ntfsize] \"$par get-req-notify $pageid\"\n\
+gen/ns_tcl.cc:14661:$self send $parent_ $size \\\n\
+gen/ns_tcl.cc:14724:$self send $parent_ [$self get-joinsize] \\\n\
+gen/ns_tcl.cc:14759:$self send $cache [$self get-mpusize] \"$cache request-mpush $page\"\n\
+gen/ns_tcl.cc:14768:$self send $cache [$self get-mpusize] \"$cache refresh-mpush $page\"\n\
+gen/ns_tcl.cc:14789:$self send $cache [$self get-mpusize] \"$cache stop-mpush $page\"\n\
+gen/ns_tcl.cc:14906:$self send $par [$self get-pfsize] \\\n\
+gen/ns_tcl.cc:15162:$self send $server $size \\\n\
+gen/ns_tcl.cc:15364:$self send $cache_ [$self get-mpusize] \\\n\
+gen/ns_tcl.cc:15373:$self send $cache_ [$self get-mpusize] \"$cache_ refresh-mpush $page\"\n\
+gen/ns_tcl.cc:15387:$self send $cache_ [$self get-mpusize] \"$cache_ stop-mpush $page\"\n\
+gen/ns_tcl.cc:15688:$self send $client [$self get-reqsize] \\\n\
+gen/ns_tcl.cc:15736:$self send $client $size \"$client offline-complete $pageid\"\n\
+gen/ns_tcl.cc:15844:$self send $server [$self get-reqsize] \"$server get-request $self STOPPREF $pageid $app\"\n\
+gen/ns_tcl.cc:15891:$self send $server [$self get-reqsize] \\\n\
+gen/ns_tcl.cc:15914:$self send $client [$self get-reqsize] \\\n\
+gen/ns_tcl.cc:15943:$self send $cl $size \\\n\
+gen/ns_tcl.cc:15951:$self send $server $size \"$server get-request $self PREFSEG \\\n\
+gen/ns_tcl.cc:19568:Agent/SCTP set initialSwnd_ 0          ;# initial send window; 0=No Send window\n\
+gen/ns_tcl.cc:19791:Agent/TFRC set InitRate_ 300 ;	# Initial send rate	\n\
+gen/ns_tcl.cc:19829:Agent/TCP/FullTcp set iss_ 0; # Initial send seq#\n\
+gen/ns_tcl.cc:19882:Agent/TCP/BayFullTcp set iss_ 0; # Initial send seq#\n\
+greencloud/cbrclouduser.cc:32:	double rate_;     /* send rate during on time (bps) */
+greencloud/cbrclouduser.cc:113:	/* send a packet */
+greencloud/cbrclouduser.cc:115:	/* figure out when to send the next one */
+greencloud/expclouduser.cc~:34:	double rate_;     /* send rate during on time (bps) */
+greencloud/expclouduser.cc~:136:	/* figure out when to send the next one */
+greencloud/paretoclouduser.cc~:25:	double rate_;    /* send rate during burst (bps) */
+greencloud/paretoclouduser.cc~:141:	/* send a packet */
+greencloud/paretoclouduser.cc~:143:	/* figure out when to send the next one */
+greencloud/expclouduser.cc:34:	double rate_;     /* send rate during on time (bps) */
+greencloud/expclouduser.cc:137:	/* figure out when to send the next one */
+greencloud/cbrclouduser.cc~:32:	double rate_;     /* send rate during on time (bps) */
+greencloud/cbrclouduser.cc~:113:	/* send a packet */
+greencloud/cbrclouduser.cc~:115:	/* figure out when to send the next one */
+greencloud/paretoclouduser.cc:26:	double rate_;    /* send rate during burst (bps) */
+greencloud/paretoclouduser.cc:142:	/* send a packet */
+greencloud/paretoclouduser.cc:144:	/* figure out when to send the next one */
+HOWTO-CONTRIBUTE:33:Please send your pointers to the ns-users mailing list
+imep/imep.cc:355:    { // all the Hellos we had to send out during the last BEACON_PERIOD
+imep/imep.cc:357:      // and we don't need to send a beacon now.  If there were none, beacon
+imep/imep.cc:622:	  // require changing tora to send out pkts with a non 0 hndler
+imep/imep.cc:790:	// First, send an ack for the object
+imep/imep.cc:902:  // send an ack for the object in p, if any
+imep/imep_api.cc:95:      // send a hello immeadiately after learning of a new
+Binary file indep-utils/webtrace-conv/dec/dec-tr-stat matches
+Binary file indep-utils/webtrace-conv/epa/epa-tr-stat matches
+Binary file indep-utils/webtrace-conv/nlanr/nlanr-tr-stat matches
+Binary file indep-utils/webtrace-conv/ucb/ucb-tr-stat matches
+indep-utils/model-gen/http_connect.c:637:		   /* some servers appear to send response data immediately
+indep-utils/model-gen/http_connect.c:994:               implies that the server will send no more data.  Treat this
+indep-utils/cmu-scen-gen/cbrgen.tcl:145:puts "#\n# nodes: $opt(nn), max conn: $opt(mc), send rate: $opt(interval), seed: $opt(seed)\n#"
+indep-utils/dosdbell/README:36:100 0.1  20     # Hundred TCP sources each send at 100Kbps, all start before 20s
+indep-utils/dosdbell/README:37:200 0.05 200 0 50 # 200 Attackers, each send at 50Kbps using 200B packets,
+linkstate/ls.cc:488:		ls_error ("Wait a minute, nothing to send for this neighbor");
+linkstate/ls.cc:490:	// resend topo map
+linkstate/ls.cc:494:	// resend all other unack'ed LSA
+linkstate/ls.cc:542:	// if there's any changes, compute new routes and send link states
+linkstate/ls.cc:543:	// Note: we do want to send link states before topo
+linkstate/ls.cc:551:	// Check if there's need to send topo or cancel timer
+linkstate/ls.cc:567:			// Don't have to send out tpm if the link goes from 
+linkstate/ls.cc:718:// send acknowledgment, called self
+linkstate/ls.cc:733:	// Call node to send out message
+linkstate/ls.cc:744:	// send Ack 
+linkstate/ls.cc:780:			// Regenerate the LSA message and send to my peers, 
+linkstate/ls.cc:794:// replicate a LSA and send it out
+linkstate/ls.cc:830:	// XXX, here we are going to send the pointer that points
+linkstate/ls.h:636:	// send the entire topomap
+linkstate/ls.h:649:	// actually send out 
+Binary file linkstate/ls.o matches
+mac/mac-802_11Ext.h:377: When the transmission of a RTS frame is completed, the transmission coordination module moves into the Wait CTS state and starts a timer TCTS. If the reception coordination module does not signal the arrival of a CTS frame before the timer expires, it starts another backoff process and moves back to the RTS pending state. It can repeat this process until the short retry limit is reached. If a CTS response comes back in time, then the transmission coordination module waits for SIFS before instructing the transmission module to send the data frame.
+mac/mac-802_3.cc:242:	// pass the packet to the PHY: need to send a copy, 
+Binary file mac/smac.o matches
+mac/mac-multihop.h:140:	void send(Packet*); /* send data packet (assume POLLed) link */
+mac/mac-tdma.h:272:  /* Actually send the packet buffered. */
+mac/mac-802_11.cc:599:		 *  Need to send a CTS or ACK.
+mac/mac-802_11.cc:938:	 *  If the medium is not IDLE, don't send the CTS.
+mac/mac-802_11.cc:1281:		/* tell the callback the send operation failed 
+mac/mac-802_11.cc:1368:		/* tell the callback the send operation failed 
+mac/mac-802_11.cc:1931:			 *  We did not send a CTS and there's no
+mac/mac-802_11.cc:2002:		/* if it is a broadcast pkt then send a copy up
+mac/mac-802_11.cc:2159:/* Beacon send and Receive functions
+mac/mac-simple.cc:127:	/* let MacSimple::send handle the outgoing packets */
+mac/mac-simple.cc:140:	// in full duplex mode it can recv and send at the same time
+mac/mac-simple.cc:217:		// between the LL and the MAC .. the queue won't send us
+mac/mac-simple.cc:260:	// in full duplex mode we can send and recv at the same time
+mac/smac.cc:66://     tries to send out a sync packet. It suppresses sending out of sync pkt
+mac/smac.cc:538:        // send only if the buffered packet is unicast. Since my next-hop
+mac/smac.cc:783:		// try to send waiting data, if any
+mac/smac.cc:802:			goto done;  // cannot send if radio is sending or recving
+mac/smac.cc:805:			goto done; // cannot send if not in any of these states
+mac/smac.cc:900:			goto sched_1;  // cannot send if radio is sending or recving
+mac/smac.cc:903:			goto sched_1;; // cannot send if not in any of these states
+mac/smac.cc:934:			goto sched_2;  // cannot send if radio is sending or recving
+mac/smac.cc:937:			goto sched_2; // cannot send if not in any of these states
+mac/smac.cc:981:		// check if ready to send out sync 
+mac/smac.cc:1485:                        if (numFrags_ > 0) { //need to send more frags
+mac/smac.cc:1498:			// if (numFrags_ > 0) { //need to send more frags
+mac/smac.cc:1581:                     		tempSched.txSync = schedTab_[schedId].txSync;  // need send sync
+mac/smac.cc:1592:                     		schedTab_[schedId].txSync = schedTab_[0].txSync;  // need send sync
+mac/smac.cc:1674:                     				schedTab_[i].txSync = schedTab_[0].txSync;  // need send sync
+mac/smac.cc:1690:                   			schedTab_[0].txSync = 1;  // need send sync
+mac/smac.cc:1702:                   			schedTab_[i].txSync = 1;  // need send sync
+mac/smac.cc:1768:                     	tempSched.txSync = schedTab_[schedId].txSync;  // need send sync
+mac/smac.cc:1779:                     	schedTab_[schedId].txSync = schedTab_[0].txSync;  // need send sync
+mac/smac.cc:1888:	// defragment all pkts and send them up
+mac/smac.cc:1964:	// start unicast data; send RTS first
+mac/smac.cc:2023://   // send next fragment
+mac/smac.cc:2030:   // send next fragment
+mac/smac.cc:2046:         // schedule to send this fragment, no need for carrier sense
+mac/smac.cc:2128:		// check if can send now
+mac/smac.cc:2173:			printf("Neighbor unknown; cannot send pkt\n");
+mac/smac.cc:2197:		// check if can send now
+mac/smac.cc:2241:	// send RTS
+mac/smac.cc:2277:	// send CTS
+mac/smac.cc:2298:	// send DATA
+mac/smac.cc:2336:  // send ACK
+mac/smac.cc:2346:  // construct and send SYNC pkt
+mac/smac.cc:2373:  // send SYNC
+mac/phy.h:45: * the decision to send has already been made and the packet is on
+mac/mac-tdma.cc:222:	// Can't send anything in the first frame.
+mac/mac-tdma.cc:327:	/* Incoming packets from phy layer, send UP to ll layer. 
+mac/mac-tdma.cc:345:	   send them to phy layer. 
+mac/mac-tdma.cc:425:/* Actually send the packet. */
+mac/mac-tdma.cc:552:	// If I dont send / recv, do nothing.
+mac/mac-tdma.cc:591:	//  printf("<%d>, %f, send a packet finished.\n", index_, NOW);
+mac/ll.cc:201:		/* Assuming arptable is present, send query */
+mac/wired-phy.cc:90:	// and then send the packet
+mac/mac-multihop.cc:142:		// could send NACKPOLL but don't (at least for now)
+mac/mac-multihop.cc:162:		mac_->send(mac_->pkt()); /* send saved packet */
+mac/mac-multihop.cc:193: * Actually send the data frame.
+mac/mac.h:241:	MacHandlerSend hSend_;	// handle delay send due to busy channel
+mac/smac.h:66://     tries to send out a sync packet. It suppresses sending out of sync pkt 
+mac/smac.h:144: * SYNC_PERIOD: period to send a sync pkt, in cycles.
+mac/smac.h:195:#define TX_NEXT_FRAG 6 // send one fragment, waiting for next from upper layer
+mac/smac.h:197:#define WAIT_NEXTFRAG 6 // send one fragment, waiting for next from upper layer
+mac/smac.h:206:// how to send the pkt: broadcast or unicast
+mac/smac.h:312:  int txSync;  // flag indicating need to send sync 
+mac/smac.h:313:  int txData;  // flag indicating need to send data 
+mac/smac.h:603:  int sendAddr_;		// node to send data to
+mac/wired-phy.h:48:        // send outgoing packet to downstream object by simply
+mac/wired-phy.h:53:	// propagation models; then send to upstream obj.
+mac/arp.cc:238:	ch->direction() = hdr_cmn::DOWN; // send this pkt down
+mac/arp.cc:281:	 *  Can we send whatever's being held?
+mac/arp.cc:320:		ch->direction() = hdr_cmn::DOWN; // send this pkt down
+Binary file mcast/srm.o matches
+mcast/srm-topo.cc:203: * Very simple now, can only send to direct ancestor/descendant 
+mcast/srm-topo.cc:353:	 * Copy the packet and send it over to 
+mcast/lms-receiver.cc:241:printf("at %f %s send nak to upstream lms %d, size is %d\n\n",
+mcast/lms-receiver.cc:276:printf("%s send refresh packet, size is %d\n\n",
+mcast/lms-receiver.cc:317:	// GAP: send retransmission request
+mcast/srm.cc:145:		tcl.resultf("%s: invalid send request %s", name_, argv[2]);
+mcast/mcast_ctrl.cc:76: 	 * $proc send $type $src $group
+Binary file mcast/srm-ssm.o matches
+mcast/srm-ssm.cc:122:    tcl.resultf("%s: invalid send request %s", name_, argv[2]);
+mcast/srm-ssm.cc:126:      fprintf(stdout,"%s: send request %s passed to srm_agent", 
+mcast/lms-agent.cc:245:                 // adjust cost and distance and send upstream
+mdart/mdart.cc:120:			//send hello packets regularly
+mobile/god.cc:88:	num_send = 0;
+mobile/god.cc:947:		  num_send = new int[num_data_types];
+mobile/mip.h:160:	NsObject *bcast_target_; /* where to send out ads */
+mobile/mip.h:161:	NsObject *ragent_;     /* where to send reg-replies to MH */
+mobile/mip.h:202:	NsObject *bcast_target_; /* where to send out solicitations */
+mpls/classifier-addr-mpls.h:59:* Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     *
+mpls/ldp.cc:56:* Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     *
+mpls/classifier-addr-mpls.cc:62: * Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute    *
+mpls/ldp.h:58:* Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     *
+Binary file ns matches
+ns.1:1143:Indicates (in bytes) how much each flow can send during its turn.
+ns.1:1730:will send a join message onto the LAN.
+ns.1:1866:and then send the output to a trace file
+ns.1:1941:the source can send in response to a single incoming ACK.
+ns.1:2903:send mail to ns-users-request@mash.cs.berkeley.edu
+Binary file nstk matches
+packmime/packmime_HTTP.cc:1085:	timer_.sched(0);   // send data now
+packmime/packmime_HTTP.cc:1246:	// send request
+packmime/packmime_HTTP.cc:1359:	// send response
+packmime/packmime_HTTP.cc:1414:		// send data after waiting server delay seconds
+pgm/pgm-sender.cc:224:  //  nsaddr_t group_; // The multicast group we send to.
+pgm/pgm-sender.cc:363:// The application calls this function to send out new ODATA (original DATA).
+pgm/pgm-sender.cc:442:  // Immediately send the NCF packet to the interface where the NAK
+pgm/pgm-sender.cc:444:  // to this node, then send the packet to that agent.
+pgm/pgm-howto.txt:121:         get processed so we don't send out duplicate RDATA.  This delay
+pgm/pgm-howto.txt:128:         can send out a NAK and time-out waiting for an NCF reply.  Once the
+pgm/pgm-howto.txt:139:         value, before it will send out a NAK packet when detecting a gap in
+pgm/pgm-howto.txt:211:begin to send out heartbeat SPM packets.  These will initialize the
+pgm/pgm-howto.txt:213:to send NAK packets in the event of a packet drop.  The SPM's should be
+pgm/pgm-agent.cc:791:    // send another NAK to our upstream.
+pgm/pgm-agent.cc:896:// Create and send a nak packet to the upstream path.
+pgm/pgm-receiver.cc:195:  // Maximum number of times we can send out a NAK and time-out waiting for
+pgm/pgm-receiver.cc:617:    trace_event("DETECT", backoff); 	//Detected Loss, will send NACK after backoff
+plm/cbr-traffic-PP.cc:69:	double rate_;     /* send rate during on time (bps) */
+plm/cbr-traffic-PP.cc:141:        /* send a packet */
+plm/cbr-traffic-PP.cc:149:        /* figure out when to send the next one */
+pushback/rate-limit.h:52:                    //  if pushback is ON, the node needs to send pushback refresh messages
+pushback/rate-limit.h:54:                    // one hop downstream (send status in latter case).
+pushback/pushback.cc:771:  //send status if you are not root.
+pushback/pushback.cc:774:    // 2. if yes, then send status downstream.
+pushback/pushback.cc:777:      //send status down
+pushback/pushback.cc:811:  //2. if pushback has been propagated send out refreshes upstream with new limits
+queue/priqueue.cc:122:     * We're not blocked.  Get a packet and send it on.
+queue/semantic-packetqueue.h:97:	int acks_to_send;	/* number of ack to send in current schedule */
+queue/cbq.cc:385: * we are permitted to send if either
+queue/cbq.cc:690:                 *  to send and has positive "bytes_alloc_".
+queue/cbq.cc:692:                 *  that was able to send except for insufficient
+queue/cbq.cc:697:                 *  for a class to send even with insufficient "bytes_alloc_".
+queue/cbq.cc:712:                                                // not ok to send right now
+queue/cbq.cc:939: * happens when a class is unable to send because it
+queue/queue.cc:122:		 * We're not blocked.  Get a packet and send it on.
+queue/fq.cc:189:		 * We're not blocked.  Get a packet and send it on.
+queue/srr.cc:136:	int last_size;			// the length of the last send packet
+queue/red-pd.cc:218:	//if not dropped or a non-monitored packet - send it to the RED queue 
+Binary file rap/media-app.o matches
+rap/media-app.cc:517:		// We simply rotating the layers from which to send data
+rap/media-app.cc:757:	// to send data for the base layer until the first ACK arrives.
+rap/media-app.cc:763:		debug("INIT Phase, send packet: layer 0 in send_pkt, \
+rap/media-app.cc:796:		debug("STARTUP, send packet: layer 0\n");
+rap/media-app.cc:897:		 * 1) send for any layer that its buffer is below MWM
+rap/media-app.cc:1036:				// XXX Do not send anything if we don't have
+rap/media-app.cc:1286:		// For now, send a chunk from the base layer. Modify it later!!
+rap/media-app.cc:1333:	// In order to send out a segment, all corresponding segments of 
+rap/media-app.cc:1406:		// Print error messages, do not send anything and wait for 
+rap/rap.h:156:const int RF_COUNTPKT = 0x04;    // This agent will send up to certain # of pkts
+rap/rap.cc:275://      Create a packet, increase seqno_, send the packet out.
+rap/rap.cc:438:			// send packet
+rap/rap.cc:474:	// During the past srtt_, we are supposed to send out srtt_/ipg_
+rap/rap.cc:650://      Create an ack packet, set fields, send the packet out.
+realaudio/realaudio.cc:78:	double rate_;    /* send rate during burst (bps) */
+release_steps.txt:29:0.2. send out release announcement to ns-developers for approval
+release_steps.txt:63:7. send out the release announcement (ns-users, ns-announce)
+release_steps.txt:64:   (also send to end2end if it's a non-{alpha,beta} release)
+routing/rttable.h:107:        double          rt_req_timeout;         // when I can send another req
+satellite/satlink.cc:538:		return; // No packet to free or send up.
+satellite/satlink.cc:562:		// wait for processing delay (delay_) to send packet upwards 
+satellite/satlink.cc:650:		// change direction and send to uptarget (which is
+satellite/sat-hdlc.cc:132:		// send out SABME request to start connection
+satellite/sat-hdlc.cc:148:	// send data pkts only after recving UA
+satellite/sat-hdlc.cc:202:// try to send as much as possible if have any pkts to send
+satellite/sat-hdlc.cc:616:	// see if we can send more
+satellite/sat-hdlc.cc:723:	// send UA 
+satellite/sat-hdlc.cc:798:// receiver ready - ack for a pkt successfully recvd by receiver, send next pkt pl
+satellite/sat-hdlc.cc:839:	// try to send more
+satellite/sat-hdlc.cc:903:	// resend only the pkt that was requested
+satellite/sat-hdlc.cc:931:	// purge send buffer, if any
+satellite/sat-hdlc.cc:944: 		// to send up out-of-order pkts
+satellite/sat-hdlc.cc:970:// 		// to send up out-of-order pkts
+satellite/sat-hdlc.cc:1133:		// send ack back
+satellite/sat-hdlc.cc:1156:			// since GoBackN send REJ for the first
+satellite/sat-hdlc.cc:1171:		// send ack back as previous RR maybe lost
+satellite/sat-hdlc.cc:1181:// in case of a missing pkt, send SREJ for that pkt only
+satellite/sat-hdlc.cc:1276:		// send ack 
+satellite/sat-hdlc.h:178:// Initialization: consists of the sender sending a U frame issuing the SABME command (set asynchronous balanced mode/extended); the receiver sends back an UA (unnumbered ackowledged) or can send a DM (disconnected mode) to reject connection setup.
+satellite/sat-hdlc.h:180:// Data sending: done using I frames by sender. receiver sends back RR S frames indicating the next I frame it expects. S frames are used for both error control as well as flow control. It sends a REJ for any missing frame asking receiver to go-back-N. It can send RNR asking recvr not to send any frames until it again sends RR. It also sends SREJ asking retx of a specific missing pkt.
+satellite/satroute.cc:132:	hdrc->direction() = hdr_cmn::DOWN; // send it down the stack
+sctp/sctp-multipleFastRtx.cc:40: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+sctp/sctp-multipleFastRtx.cc:350:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp-multipleFastRtx.cc:365:  /* PN: 5/2007. Simulate send window */
+sctp/sctp-multipleFastRtx.cc:477:      /* PN: 5/2007. Simulate send window */
+sctp/sctp-multipleFastRtx.cc:486:        /* PN: 5/2007. Simulate send window */
+sctp/sctp-multipleFastRtx.cc:698:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-multipleFastRtx.cc:699:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-multipleFastRtx.cc:700:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp-multipleFastRtx.cc:1027:	  /* 04/18: PN: With NR-SACKS tsns can be missing in the send buffer,
+sctp/sctp-multipleFastRtx.cc:1039:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp-multipleFastRtx.cc:1041:       * ack blocks before we finished running through the send buffer, we need
+sctp/sctp-multipleFastRtx.cc:1042:       * to mark the remaining chunks in the send buffer as eGapAcked=FALSE.
+sctp/sctp-multipleFastRtx.cc:1077:	 in the send buffer. So, if there are Gap Ack Blocks which are not 
+sctp/sctp-multipleFastRtx.cc:1108:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-multipleFastRtx.cc:1109:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-multipleFastRtx.cc:1110:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp-multipleFastRtx.cc:1119:	 instead of using TSNs in the send buffer. So, if there are Gap Ack 
+sctp/sctp-multipleFastRtx.cc:1142:		 previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-multipleFastRtx.cc:1143:		 with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-multipleFastRtx.cc:1144:		 the Highest TSN SACKed in the send buffer */
+sctp/sctp-mfrTimestamp.h:44: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+sctp/sctp.CHANGES:11:   - added new feature to support a limited size send buffer at the data
+sctp/sctp.CHANGES:14:     0 which means there is no constraint on the send buffer.
+sctp/sctp.CHANGES:23:   - new validation tests for NR-SACKs and limited send buffer size are added to
+sctp/sctp.CHANGES:163:     just using the last tsn in the send buffer, which is not always the
+sctp/sctp.CHANGES:166:   - bug fix. HbAfterRto should not send a HB after an RTO if the timeout
+sctp/sctp.CHANGES:361:     on a destination wasn't the first one in the send buffer for that
+sctp/sctp.CHANGES:388:     (eg, "ftp send 12000"). so a message which doesn't fit into a single
+sctp/sctp.h:851:  Boolean_E          eSendNewDataChunks; // should we send new data chunks too?
+sctp/sctp.h:907:   * 0 = Do not use send window (infinite send buffer)
+sctp/sctp.h:908:   * else, simulate a finite send buffer.
+sctp/sctp-hbAfterRto.cc:203:      /* If there is an active alternate destination, then send a HB
+sctp/sctp-mfrTimestamp.cc:40: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+sctp/sctp-mfrTimestamp.cc:342:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp-mfrTimestamp.cc:767:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp-mfrTimestamp.cc:769:       * ack blocks before we finished running through the send buffer, we need
+sctp/sctp-mfrTimestamp.cc:770:       * to mark the remaining chunks in the send buffer as eGapAcked=FALSE.
+sctp/sctp.cc:209:  /* PN: 5/07. Simulate send window */
+sctp/sctp.cc:340:  /* PN: 5/07. Simulate send window */
+sctp/sctp.cc:631:  /* PN: 5/2007. Simulate send window */
+sctp/sctp.cc:2329:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp.cc:2344:  /* PN: 5/2007. Simulate send window */
+sctp/sctp.cc:2454:      /* PN: 5/2007. Simulate send window */
+sctp/sctp.cc:2462:      /* PN: 5/2007. Simulate send window */
+sctp/sctp.cc:2572:  /* start from the tailof the send buffer and search towards the head for the
+sctp/sctp.cc:2612:  /* start from the tail of the send buffer and search towards the head for the 
+sctp/sctp.cc:2830:/* This function goes through the entire send buffer filling a packet with 
+sctp/sctp.cc:3089:		   * send buffer.  However, if there ARE more outstanding
+sctp/sctp.cc:3891:	  eSackChunkNeeded = TRUE; // section 6.7 - send sack immediately!
+sctp/sctp.cc:4109:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp.cc:4110:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp.cc:4111:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp.cc:4439:	  /* 04/18: PN: With NR-SACKS tsns can be missing in the send buffer,
+sctp/sctp.cc:4451:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp.cc:4453:       * gap ack blocks before we finished running through the send buffer, we
+sctp/sctp.cc:4454:       * need to mark the remaining chunks in the send buffer as 
+sctp/sctp.cc:4490:	 in the send buffer. So, if there are Gap Ack Blocks which are not 
+sctp/sctp.cc:4521:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp.cc:4522:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp.cc:4523:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp.cc:4532:	 instead of using TSNs in the send buffer. So, if there are Gap Ack 
+sctp/sctp.cc:4555:		 previous calculation is using the TSNs from the send buffer and 
+sctp/sctp.cc:4556:		 with the introduction of NR-SACKs send buffer may not have
+sctp/sctp.cc:4557:		 the Highest TSN SACKed in the send buffer */
+sctp/sctp.cc:4638: * send buffer and free up send buffer.
+sctp/sctp.cc:4674:     * Update Highest Tsn last sent before deleting Tsns from send buffer.
+sctp/sctp.cc:4704:	      /* not yet reached uiStartTsn in send buffer */
+sctp/sctp.cc:4730:	      /* PN: 5/2007. Simulate send window */
+sctp/sctp.cc:4743:	      /* Reached end of send buffer queue; break */
+sctp/sctp.cc:4749:  } /* End else send buffer not empty */
+sctp/sctp.cc:4972:      /* Process the NR-SACKed TSNs in the send buffer. 
+sctp/sctp.cc:5292:      /* Do not send any data until all dests have been confirmed
+sctp/sctp.cc:5293:       * RFC allows to send data on confirmed dests though.
+sctp/sctp.cc:5344:	   * chunk sequence", so let's ensure we send a SACK immediately!
+sctp/sctp.cc:5736:      send(opPacket, 0); // no... so send immediately
+sctp/sctp.cc:5743:	   * flushing and send the packet immediately.
+sctp/sctp.cc:5844:  /* Let's check to see if we need to generate and send a SACK chunk.
+sctp/sctp.cc:5893:  /* Do we want to send out new DATA chunks in addition to whatever we may have
+sctp/sctp.cc:5894:   * already transmitted? If so, we can only send new DATA if no marked chunks
+sctp/sctp.cc:5957:   * full... send another packet.  
+sctp/sctp.cc:5961:   * layer. If so, then send as much as we can.
+sctp/sctp.cc:6000:	      /* No send window space available to get application data */
+sctp/sctp.cc:6029:  if(iOutDataSize > 0)  // did we send anything??
+sctp/sctp.cc:6219:      /* If we are here, we assume the application is trying to send data
+sctp/sctp.cc:6221:       * data is ok, but DON'T send it yet!!  
+sctp/sctp.cc:6449:	SendHeartbeat(spDest);  // just marked inactive, so send HB immediately
+sctp/sctp.cc:6651:  /* Dequeue and send all queued packets
+sctp/sctp.cc:6710: * This method goes through the send buffer and counts
+sctp/sctp-newreno.cc:96:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp-newreno.cc:579:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp-newreno.cc:581:       * ack blocks before we finished running through the send buffer, we need
+sctp/sctp-newreno.cc:582:       * to mark the remaining chunks in the send buffer as eGapAcked=FALSE.
+sctp/sctp.TODO:31:      1 above the beginning TSN of the current send window.
+sctp/sctp.README:114:      stderr. Also, two peers should NOT send debug output to the same
+sctp/sctp.README:452:          This variable is used to set the data sender's send buffer
+sctp/sctp.README:454:          the send buffer is unlimited in size. 
+sctp/sctp-cmt.cc:1103:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp-cmt.cc:1119:  /* PN: 12/20/2007. Simulate send window */
+sctp/sctp-cmt.cc:1294:      /* PN: 12/20/2007. Simulate send window */
+sctp/sctp-cmt.cc:1303:      /* PN: 12/20/2007. Simulate send window */
+sctp/sctp-cmt.cc:1362:/* This function goes through the entire send buffer filling a packet with 
+sctp/sctp-cmt.cc:1519:	       * If spRtxDest is NULL, no dest was able to send rtx.
+sctp/sctp-cmt.cc:1524:		   * At this point, no dest was able to send this rtx. 
+sctp/sctp-cmt.cc:1668:		   * send buffer.  However, if there ARE more outstanding
+sctp/sctp-cmt.cc:2465:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-cmt.cc:2466:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-cmt.cc:2467:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp-cmt.cc:2874:	     * nr-sacks. Account for missing tsns in send buffer */
+sctp/sctp-cmt.cc:2885:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp-cmt.cc:2887:       * ack blocks before we finished running through the send buffer, we need
+sctp/sctp-cmt.cc:2888:       * to mark the remaining chunks in the send buffer as eGapAcked=FALSE.
+sctp/sctp-cmt.cc:2924:	 in the send buffer. So, if there are Gap Ack Blocks which are not 
+sctp/sctp-cmt.cc:2955:	     previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-cmt.cc:2956:	     with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-cmt.cc:2957:	     the Highest TSN SACKed in the send buffer */
+sctp/sctp-cmt.cc:2966:	 instead of using TSNs in the send buffer. So, if there are Gap Ack 
+sctp/sctp-cmt.cc:2989:		 previous calculation is using the TSNs from the send buffer and 
+sctp/sctp-cmt.cc:2990:		 with the introduction of NR-SACKs send buffer may not have
+sctp/sctp-cmt.cc:2991:		 the Highest TSN SACKed in the send buffer */
+sctp/sctp-cmt.cc:3493:  /* Process the NR-SACKed TSNs in the send buffer. 
+sctp/sctp-cmt.cc:3755:       * RFC allows to send data to a confirmed destination.
+sctp/sctp-cmt.cc:3822:	   * chunk sequence", so let's ensure we send a SACK immediately!
+sctp/sctp-cmt.cc:4011:	       * become ACTIVE now. First send retransmissions to the
+sctp/sctp-cmt.cc:4015:	       * send retransmissions to the ACTIVE destination. 
+sctp/sctp-cmt.cc:4020:	      /* CMT, CMT-PF: If no marked chunks, send new data 
+sctp/sctp-cmt.cc:4050:		  /* Set flag for SendMuch to send new data. 
+sctp/sctp-cmt.cc:4349:  /* Let's check to see if we need to generate and send a SACK chunk.
+sctp/sctp-cmt.cc:4495:      DBG_PL(SendMuch,"RR debug: In send loop, trying for dest=%p"), 
+sctp/sctp-cmt.cc:4498:      /* CMT-PF: Do not send to failed or PF destinations! 
+sctp/sctp-cmt.cc:4517:       * SCTP did not send any new data on any path when rtxs had to be
+sctp/sctp-cmt.cc:4528:       * full... send another packet.  
+sctp/sctp-cmt.cc:4532:       * from the app layer. If so, then send as much as we can.
+sctp/sctp-cmt.cc:4584:	      	  /* No send window space available to get application data */
+sctp/sctp-cmt.cc:4613:      if(iOutDataSize > 0)  // did we send anything??
+sctp/sctp-cmt.cc:4841:	SendHeartbeat(spDest); // just marked inactive, so send HB immediately!
+sctp/sctp-cmt.cc:4865:  /* start from the tailof the send buffer and search towards the head for the 
+sctp/sctp-cmt.cc:4919:  /* start from the tail of the send buffer and search towards the head for the 
+sctp/sctp-cmt.cc:5092: * If all destinations are marked PF, send data to one of
+sctp/sctp-cmt.cc:5124: * avoided with a better implementation - do not send HB on
+sctp/sctp-mfrHbAfterRto.h:44: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+sctp/sctp-multipleFastRtx.h:42: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+Binary file sctp/sctp-cmt.o matches
+sctp/sctp-timestamp.cc:121:  /* We need to send a timestamp in the timestamp chunk when sending data
+sctp/sctp-timestamp.cc:189:/* Go thru the send buffer deleting all chunks which have a tsn <= the 
+sctp/sctp-timestamp.cc:314:/* This function goes through the entire send buffer filling a packet with 
+sctp/sctp-timestamp.cc:578:		   * send buffer.  However, if there ARE more outstanding
+sctp/sctp-timestamp.cc:937:      /* By this time, either we have run through the entire send buffer or we
+sctp/sctp-timestamp.cc:939:       * ack blocks before we finished running through the send buffer, we need
+sctp/sctp-timestamp.cc:940:       * to mark the remaining chunks in the send buffer as eGapAcked=FALSE.
+sctp/sctp-mfrHbAfterRto.cc:42: * per TSN in the send buffer. Any time a TSN is retransmitted, its
+sctp/sctp-mfrHbAfterRto.cc:213:      /* If there is an active alternate destination, then send a HB
+sensor-nets/landmark.cc:1054:  // Need to send the packet down the stack
+sensor-nets/landmark.cc:1286:    // level and send out demotion messages
+sensor-nets/landmark.cc:2078:  // Update tag lists and send out corresponding advertisements
+sensor-nets/landmark.cc:3076:	// requested tag; add X,Y info and send response
+sensor-nets/flood-agent.cc:282:  // Packet will be send down the stack
+sensor-nets/flood-agent.h:53:  void periodic_callback(Event *e, int level); // method to send periodic advts
+sensor-nets/landmark.h:400:  virtual void periodic_callback(Event *e, int level); // method to send periodic advts
+src_rtg/sragent.cc:188:	  // I can change the packet type and send it to the entry point once again..... this would set things right. This part of the code is managing things at the receiver also..... finally the packet goes to the right agent and not our src rt agent.
+tcl/lib/ns-default.tcl.orig:863:## PN: 5/2007. NR-Sacks & send window simulation 
+tcl/lib/ns-default.tcl.orig:864:Agent/SCTP set initialSwnd_ 0          ;# initial send window; 0=No Send window
+tcl/lib/ns-default.tcl.orig:1170:Agent/TFRC set InitRate_ 300 ;	# Initial send rate	
+tcl/lib/ns-default.tcl.orig:1220:	Agent/TCP/FullTcp set iss_ 0; # Initial send seq#
+tcl/lib/ns-default.tcl.orig:1273:	Agent/TCP/BayFullTcp set iss_ 0; # Initial send seq#
+tcl/lib/ns-source.tcl~:51:	[$self agent] send -1
+tcl/lib/ns-source.tcl~:54:# Causes TCP to send no more new data.
+tcl/lib/ns-source.tcl~:60:Application/FTP instproc send {nbytes} {
+tcl/lib/ns-source.tcl~:61:	[$self agent] send $nbytes
+tcl/lib/ns-source.tcl:51:	[$self agent] send -1
+tcl/lib/ns-source.tcl:54:# Causes TCP to send no more new data.
+tcl/lib/ns-source.tcl:60:Application/FTP instproc send {nbytes} {
+tcl/lib/ns-source.tcl:61:	[$self agent] send $nbytes
+tcl/lib/ns-route.tcl:452:	# send hierarchical data :
+tcl/lib/ns-default.tcl~:913:## PN: 5/2007. NR-Sacks & send window simulation 
+tcl/lib/ns-default.tcl~:914:Agent/SCTP set initialSwnd_ 0          ;# initial send window; 0=No Send window
+tcl/lib/ns-default.tcl~:1220:Agent/TFRC set InitRate_ 300 ;	# Initial send rate	
+tcl/lib/ns-default.tcl~:1270:	Agent/TCP/FullTcp set iss_ 0; # Initial send seq#
+tcl/lib/ns-default.tcl~:1323:	Agent/TCP/BayFullTcp set iss_ 0; # Initial send seq#
+tcl/lib/ns-default.tcl:914:## PN: 5/2007. NR-Sacks & send window simulation 
+tcl/lib/ns-default.tcl:915:Agent/SCTP set initialSwnd_ 0          ;# initial send window; 0=No Send window
+tcl/lib/ns-default.tcl:1221:Agent/TFRC set InitRate_ 300 ;	# Initial send rate	
+tcl/lib/ns-default.tcl:1271:	Agent/TCP/FullTcp set iss_ 0; # Initial send seq#
+tcl/lib/ns-default.tcl:1324:	Agent/TCP/BayFullTcp set iss_ 0; # Initial send seq#
+tcl/session/session.tcl:463:        # send hierarchical data :
+tcl/pgm/ns-pgm.tcl:88:# Maximum number of times we can send out a NAK and time-out waiting for
+tcl/test/test-suite-mpls.tcl:243:	# make agent to send packets
+tcl/test/test-suite-smac.txt:12:3 nodes all can hear one another.node 2 send brdcast ping requests overlapping with unicast pkts 
+tcl/test/test-suite-smac.txt:15:3 nodes. node 2 can hear the sender(0) only, not receiver(1). node 0 and 1 exchange unicast pkts. node 2 send brdcasts. node 1 receives a corrupt pkt from 2 and being in CS, goes to sleep, so doesn't recv brdcast reply [2] from 0. Later node 1 wakes up to send unicast reply to node 0.
+tcl/test/test-suite-smac.txt:30:same scenario as 6. 0->1 and 2->3. same collision happens at node 1. arp is not brdcasted again. hence node 0 never gets to send out ping req to 1.
+tcl/test/sk-30-1-1-1-1-6-64.tcl:2:# nodes: 30, send rate: 0.167
+tcl/test/sk-30-1-1-1-1-6-64.tcl:6:# node 7 is ready to send data type 0 at time 0.036182026954452516
+tcl/test/test-suite-simple.tcl:1560:	$ns_ at 1.0 "$ftp1 send $bytes_ftp"
+tcl/test/test-suite-simple.tcl:1561:	puts "ftp 1 bytes_produced $bytes_ftp (using `FTP send nbytes')"
+tcl/test/test-suite-full-fixes.tcl:80:#  reno-msg_eof-fin -- send message with MSG_EOF set
+tcl/test/test-suite-full-fixes.tcl:560:	# flow 2 -- no drops, send more than flow 1, last pckt 
+tcl/test/test-suite-webcache.tcl:902:	$ns_ at [expr [$ns_ now] + 1.0] "$src_ send 1000"
+tcl/test/test-suite-webcache.tcl:903:	$ns_ at [expr [$ns_ now] + 3.0] "$dst_ send 100"
+tcl/test/test-suite-webcache.tcl:935:	$app1_ send 40 "$app2_ recv1 40"
+tcl/test/test-suite-webcache.tcl:940:	$app2_ send 1024 "$app1_ recv2 1024"
+tcl/test/test-suite-webcache.tcl:1469:	# would send out a packet first???
+tcl/test/test-suite-webcache.tcl:1500:	# going to send out the first packet
+tcl/test/test-suite-smac.tcl:119:#2 & 3 cannot hear and recv from 0 & 1. can send simultaneously.
+tcl/test/test-suite-simple-full.tcl:1305:	$ns_ at 1.0 "$ftp1 send $bytes_ftp"
+tcl/test/test-suite-simple-full.tcl:1306:	puts "ftp 1 bytes_produced $bytes_ftp (using `FTP send nbytes')"
+tcl/test/test-suite-ecn.txt:86:  The sender doesn't send a new packet when it receives the ACK for the
+tcl/test/test-suite-sack.tcl:669:    # send 21 packets only
+tcl/test/test-suite-sack.tcl:671:    $ns_ at 0.01 "$ftp1 send $bytesToSend"
+tcl/test/cbr.tcl:2:# nodes: 5, max conn: 1, send rate: 2.0, seed: 1
+tcl/test/test-suite-tcpVariants.tcl:1014:## Limited Transmit option checks not to send packets less than maxseq_,
+tcl/test/test-suite-tcpVariants.tcl:1135:## Limited Transmit option checks not to send packets less than maxseq_,
+tcl/test/test-suite-cbq.tcl:785:# To send five back-to-back packets for $audClass,
+tcl/test/test-suite-cbq.tcl:787:# To send 50 back-to-back packets, maxidle should be 0.25 seconds
+tcl/test/sk-30-3-3-1-1-6-64.tcl:2:# nodes: 30, send rate: 0.167
+tcl/test/sk-30-3-3-1-1-6-64.tcl:6:# node 7 is ready to send data type 0 at time 0.036182026954452516
+tcl/test/sk-30-3-3-1-1-6-64.tcl:19:# node 8 is ready to send data type 0 at time 0.036182026954452516
+tcl/test/sk-30-3-3-1-1-6-64.tcl:32:# node 19 is ready to send data type 0 at time 0.036182026954452516
+tcl/test/test-suite-sctp.tcl:274:# This script tests for proper behavior when using a small send buffer 
+tcl/test/test-suite-sctp.tcl:387:# becomes ACTIVE, data packets can be send to the all the destinations again. 
+tcl/test/test-suite-sctp.tcl:436:# INACTIVE destination becomes ACTIVE, data packets can be send to the all 
+tcl/test/test-suite-sctp.tcl:441:# with a small send buffer and medium size chunks. The data receiver sends
+tcl/test/test-suite-sctp.tcl:450:# some loss. The data sender has a small send buffer while the data
+tcl/test/test-suite-sctp.tcl:455:# to the upper layer at the data receiver, send buffer of the data sender
+tcl/test/test-suite-sctp.tcl:462:# used. With the use of NR-SACKs, the data sender empties the send 
+tcl/test/test-suite-sctp.tcl:469:# The send buffer of data sender is blocked and no new data can 
+tcl/test/test-suite-sctp.tcl:470:# be send before the loss recovery. All the TSNs beyond the TSN 32,
+tcl/test/test-suite-sctp.tcl:480:# its send buffer which are marked as Non-Renegable. So, data sender reads
+tcl/test/test-suite-sctp.tcl:490:# its send buffer which are marked as Non-Renegable. Since the data loss is from
+tcl/test/test-suite-sctp.tcl:492:# buffer until cumack advances. In this test case, less TSNs are send in the
+tcl/test/test-suite-sctp.tcl:493:# loss recovery period since TSNs from stream 1 filled the send buffer and
+tcl/test/test-suite-sctp.tcl:506:# streamed applications if TSNs from the same stream are always send to the 
+tcl/test/test-suite-sctp.tcl:3324:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:3407:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:3494:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:3579:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/test/test-suite-sctp.tcl:3671:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/test/test-suite-sctp.tcl:3755:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:3839:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:3923:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:4007:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/test/test-suite-sctp.tcl:4181:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/test/test-suite-sctp.tcl:4273:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/test/test-suite-sctp.tcl:4359:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:4445:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:4531:    $ns at 0.0 "$ftp0 send 1452000"
+tcl/test/test-suite-sctp.tcl:4614:    $ns at 0.0 "$ftp0 send 58080000"
+tcl/test/test-suite-sctp.tcl:5063:    $ns at 0.0 "$ftp0 send 14520000"
+tcl/mcast/srm-nam.tcl:56:Agent/SRM instproc send {type args} {
+tcl/mcast/srm-nam.tcl:66:    eval $self cmd send $type $args
+tcl/mcast/DM.tcl:224:# send a graft/prune for src/group up to the source or towards $to
+tcl/mcast/DM.tcl:229:		# we don't want to send anything to a lanNode
+tcl/mcast/DM.tcl:237:		# we're requested to send via a lan: $nbr
+tcl/mcast/DM.tcl:239:		# send a graft/prune only if there're no other receivers on the lan
+tcl/mcast/DM.tcl:252:        $mctrl_ send $which [$node_ id] $src $group
+tcl/mcast/ns-mcast.tcl:408:Agent/Mcast/Control instproc send {type from src group args} {
+tcl/mcast/ns-mcast.tcl:411:	$self cmd send $type $mcounter
+tcl/mcast/BST.tcl:28:# timers.  Nodes send grafts/prunes toward the RP to join/leave the
+tcl/mcast/BST.tcl:319:# send a graft/prune for src/group up the RPF tree towards dst
+tcl/mcast/BST.tcl:327:			# we're requested to send via a lan
+tcl/mcast/BST.tcl:329:			# send graft/prune only if there's no other receiver.
+tcl/mcast/BST.tcl:346:# 		$self dbg "BST::send-ctrl $mctrl_ ([$mctrl_ info class]) send $which [$node_ id] $dst $group"
+tcl/mcast/BST.tcl:347:		$mctrl_ send $which [$node_ id] $dst $group
+tcl/mcast/srm.tcl:557:	$agent_ send request $round_ $sender_ $msgid_
+tcl/mcast/srm.tcl:660:	$agent_ send repair $round_ $sender_ $msgid_
+tcl/mcast/srm.tcl:732:	$agent_ send session
+tcl/mcast/ST.tcl:21:# send grafts/prunes toward the RP to join/leave the group.  The user
+tcl/mcast/ST.tcl:119:	# check if the rep is active, then send a prune
+tcl/mcast/ST.tcl:179:		# then send a prune upstream.
+tcl/mcast/ST.tcl:213:# send a graft/prune to dst/group up the RPF tree towards dst
+tcl/mcast/ST.tcl:227:		$mctrl_ send $which [$node_ id] -1 $group
+tcl/rtp/session-scuba.tcl:119:	$repAgent_ send "$srcid_/$localrepid_/$rep"
+tcl/rlm/rlm.tcl:491:		$ctrl_ send $msg
+tcl/rlm/rlm-thesis.tcl:351:		$ctrl send $msg
+tcl/edu/rts-cts/rts-cts-data-ack.nam:72:v -t 0.2751 -e sim_annotation 0.2751 27 Node 0 want to send data to Node 1 at the same time that Node 2 wants to send data to Node 0 
+tcl/edu/rts-cts/RTS-CTS-DATA-ACKdescription:28:the receiver they want to send the data packets to. Hence, when receiver
+tcl/edu/rts-cts/RTS-CTS-DATA-ACKdescription:37:When node 2 wants to send data to node 0 and node 0 wants to send data to node 1. 
+tcl/edu/rts-cts/RTS-CTS-DATA-ACKdescription:48:In this case, when node 2 wants to send data to node 1 at the same time that
+tcl/edu/rts-cts/RTS-CTS-DATA-ACKdescription:49:node 0 wants to send data to node 1, node 2 hears the RTS from node 0 and backs off,
+tcl/edu/rts-cts/rts-cts-data-ack.pl:166:		print Destination 'v -t ', $new_duration , ' -e sim_annotation ', $new_duration, ' ', $i, ' Node 0 want to send data to Node 1 at the same time that Node 2 wants to send data to Node 0 ', "\n";
+tcl/edu/hidden-terminal/ht-post.pl:130:				print Destination 'v -t ', $last_time, ' -e sim_annotation ', $last_time, ' ',$i,' thus finding channel to be free , so they send packets at the same time and therefore result in collision at the receiver',"\n";
+tcl/edu/hidden-terminal/ht-post.pl:168:				print Destination 'v -t ', $last_time, ' -e sim_annotation ', $last_time,' ', $i, '  but they result in successful transmission since they send packets at different times',"\n";
+tcl/edu/hidden-terminal/ht-post.pl:205:				print Destination 'v -t ', $last_time, ' -e sim_annotation ', $last_time,' ', $i,' and they send packets at the same time, thus resulting in a collision at the receiver. ',"\n";
+tcl/edu/hidden-terminal/sht.nam:56:v -t 0.200125 -e sim_annotation 0.200125 12 thus finding channel to be free , so they send packets at the same time and therefore result in collision at the receiver
+tcl/edu/hidden-terminal/sht.nam:80:v -t 0.355125 -e sim_annotation 0.355125 16  but they result in successful transmission since they send packets at different times
+tcl/edu/hidden-terminal/sht.nam:98:v -t 0.450175 -e sim_annotation 0.450175 20 and they send packets at the same time, thus resulting in a collision at the receiver. 
+tcl/edu/chan-interference/channelInterferenceDescription:23:In this case, when both nodes send data to the receiver, some of the packets sent by the node
+tcl/edu/chan-interference/chanInterference.nam:16:v -t 0.1554 -e sim_annotation 0.1554 4 Node 0 and Node 2 are in range of each other, and are equidistant from Node 1, so when they both send packets at 
+tcl/edu/chan-interference/chanInterference.nam:27:v -t 0.1854 -e sim_annotation 0.1854 7 Node 0 and Node 2 want to send packets at the same time, since they are the same distance from the receiver, the packets
+tcl/edu/chan-interference/chanInterference.pl:102:			print Destination 'v -t ', $last_time, ' -e sim_annotation ', $last_time, ' ', $i,' and are equidistant from Node 1, so when they both send packets at different times, the signal of these', "\n";
+tcl/edu/chan-interference/chanInterference.pl:129:				print Destination 'v -t ', $last_time,' -e sim_annotation ', $last_time,' ',$i,' Node 0 and Node 2 want to send packets at the same time, since they are',"\n";
+tcl/webcache/empftp.tcl:37:	$stcp proc done {} "$self done-send $id $clnt $svr $stcp $ssnk $size [$ns now] [$stcp set fid_]"
+tcl/webcache/empftp.tcl:46:PagePool/EmpFtpTraf instproc done-send { id clnt svr stcp ssnk size {startTime 0} {fid 0}} {
+tcl/webcache/empftp.tcl:50:		puts "done-send - file:$id srv:[$svr id] clnt:[$clnt id] $size $startTime [$ns now] $fid"
+tcl/webcache/http-server.tcl:248:		# Page modified, send the new one
+tcl/webcache/http-server.tcl:274:	$self send $client $size \
+tcl/webcache/http-server.tcl:393:                $self send $c $size \
+tcl/webcache/http-server.tcl:430:	$self send $pcache_ [$self get-joinsize] \
+tcl/webcache/http-server.tcl:495:#	$self send $pcache_ $size "$pcache_ invalidate $pageid $modtime"
+tcl/webcache/http-server.tcl:508:	# Do not send invalidation, instead send the new page to 
+tcl/webcache/http-server.tcl:517:	$self send $pcache_ $size \
+tcl/webcache/webtraf.tcl:108:	# Trace web traffic flows (send request: client==>server).
+tcl/webcache/webtraf.tcl:193:    # Trace web traffic flows (send responese: server->client).
+tcl/webcache/webtraf.tcl:239:	    # modified to trace web traffic flows (send responese: server->client).
+tcl/webcache/webtraf.tcl:248:	    # modified to trace web traffic flows (send responese: server->client).
+tcl/webcache/webtraf.tcl:287:    #puts "send message: [[Simulator instance] now], $num_packet"
+tcl/webcache/http-cache.tcl:177:	$self send $server $size \
+tcl/webcache/http-cache.tcl:207:	# XXX If there's a previous requests going on we won't send another
+tcl/webcache/http-cache.tcl:250:	# XXX don't send any response here. Classify responses according
+tcl/webcache/http-cache.tcl:307:	$self send $cl $data(size) \
+tcl/webcache/http-cache.tcl:350:		# We should send back the new page, even if we got a 
+tcl/webcache/http-cache.tcl:359:	$self send $client $size \
+tcl/webcache/http-cache.tcl:512:	$self send $cl $size \
+tcl/webcache/http-cache.tcl:545:		# Do nothing; send back the newer page
+tcl/webcache/http-cache.tcl:720:	# XXX If there's a previous requests going on we won't send another
+tcl/webcache/http-cache.tcl:747:			#puts "[$ns_ now]: $id_ send TLC"
+tcl/webcache/http-cache.tcl:749:			# We'll send another request to the TLC after we get 
+tcl/webcache/http-cache.tcl:774:		$self send $parent_ $size \
+tcl/webcache/http-cache.tcl:808:	$self send $par [$self get-ntfsize] "$par get-req-notify $pageid"
+tcl/webcache/http-cache.tcl:814:# (4) Setting up a repair group to send out the new page (once and for all)
+tcl/webcache/http-cache.tcl:830:			$self send $parent_ $size \
+tcl/webcache/http-cache.tcl:900:	$self send $parent_ [$self get-joinsize] \
+tcl/webcache/http-cache.tcl:940:	$self send $cache [$self get-mpusize] "$cache request-mpush $page"
+tcl/webcache/http-cache.tcl:949:	$self send $cache [$self get-mpusize] "$cache refresh-mpush $page"
+tcl/webcache/http-cache.tcl:955:# send explicit teardown, etc. 
+tcl/webcache/http-cache.tcl:976:	$self send $cache [$self get-mpusize] "$cache stop-mpush $page"
+tcl/webcache/http-cache.tcl:1061:	# If use direct request, send a request to the web server to ask 
+tcl/webcache/http-cache.tcl:1062:	# for the page, and then send a pro forma when get the request 
+tcl/webcache/http-cache.tcl:1069:	# XXX If there's a previous requests going on we won't send another
+tcl/webcache/http-cache.tcl:1107:# Whenever get a request, send a pro forma up
+tcl/webcache/http-cache.tcl:1112:	# Then send a pro forma if it's a direct request
+tcl/webcache/http-cache.tcl:1115:		# If this page is result of a direct request, send a pro forma
+tcl/webcache/http-cache.tcl:1140:		# If we are the primary cache, don't send anything
+tcl/webcache/http-cache.tcl:1151:	$self send $par [$self get-pfsize] \
+tcl/webcache/http-cache.tcl:1165:	# We need to send invalidations to invalidate the page
+tcl/webcache/http-cache.tcl:1222:		# send a request notification towards the web server. 
+tcl/webcache/http-mcache.tcl:230:			$self send $client [$self get-reqsize] \
+tcl/webcache/http-mcache.tcl:297:		# Simply send the page back through TCP channel
+tcl/webcache/http-mcache.tcl:302:		$self send $client $size "$client offline-complete $pageid"
+tcl/webcache/http-mcache.tcl:444:			$self send $server [$self get-reqsize] "$server get-request $self STOPPREF $pageid $app"
+tcl/webcache/http-mcache.tcl:523:			$self send $server [$self get-reqsize] \
+tcl/webcache/http-mcache.tcl:549:			$self send $client [$self get-reqsize] \
+tcl/webcache/http-mcache.tcl:577:# XXX If it's a media page, change page size and send back a small response. 
+tcl/webcache/http-mcache.tcl:587:	$self send $cl $size \
+tcl/webcache/http-mcache.tcl:595:	# XXX directly send a request to the SERVER. Assuming that 
+tcl/webcache/http-mcache.tcl:599:	$self send $server $size "$server get-request $self PREFSEG \
+tcl/webcache/http-agent.tcl:254:		# If the page is being requested, do not send another request
+tcl/webcache/http-agent.tcl:259:	$self send $server $size \
+tcl/webcache/http-agent.tcl:438:	# The first time invocation we don't send out a request 
+tcl/webcache/http-agent.tcl:513:	$self send $cache_ [$self get-mpusize] \
+tcl/webcache/http-agent.tcl:522:	$self send $cache_ [$self get-mpusize] "$cache_ refresh-mpush $page"
+tcl/webcache/http-agent.tcl:523:	#puts "[$ns_ now]: Client [$self id] send mpush refresh"
+tcl/webcache/http-agent.tcl:541:	$self send $cache_ [$self get-mpusize] "$cache_ stop-mpush $page"
+tcl/mobility/scene/cbr-50-10-4-512:2:# nodes: 50, max conn: 10, send rate: 4.0, seed: 95813843.243
+tcl/mobility/scene/cbr-50-20-4-512:2:# nodes: 50, max conn: 20, send rate: 4.0, seed: 95813843.243
+tcl/mobility/scene/cbr-10-1-10-20:2:# nodes: 10, max conn: 5, send rate: 0, seed: 1
+tcl/mpls/ns-mpls-classifier.tcl:49:# Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     #
+tcl/mpls/ns-mpls-ldpagent.tcl:49:# Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     #
+tcl/mpls/ns-mpls-ldpagent.tcl:187:	# if a reservation fails, send notificaiton-msg
+tcl/mpls/ns-mpls-ldpagent.tcl:193:	#  send cr-mapping-msg.
+tcl/mpls/ns-mpls-ldpagent.tcl:256:	# find a ldpagent for a upstream-node, continually send a 
+tcl/mpls/ns-mpls-ldpagent.tcl:318:			#    send a mapping-msg forward a upstream-node
+tcl/mpls/ns-mpls-ldpagent.tcl:346:			#  so, send a null label to a penultimate hop
+tcl/mpls/ns-mpls-simulator.tcl:51:# Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     #
+tcl/mpls/ns-mpls-node.tcl:49:# Please send mail to fog1@ce.cnu.ac.kr when you modify or distribute     #
+tcl/mpls/ns-mpls-node.tcl:295:			# So, need not to send a request-msg
+tcl/ex/rc.tcl:56:	$self send "probe [$ns now]"
+tcl/ex/rc.tcl:95:		$self send "congested 0"
+tcl/ex/rc.tcl:105:		$self send "uncongested [lindex $msg 1]"
+tcl/ex/BST/bmcast-dino-platform2.nam:58:m -t 0.025000000000000001 -s 10 -n send -c brown -h circle
+tcl/ex/BST/bmcast-dino-platform2.nam:366:m -t 0.29999999999999999 -s 13 -n send -c tan -h circle
+tcl/ex/BST/bmcast-dino-platform2.nam:949:m -t 0.5 -s 10 -n send -c brown -h circle -X
+tcl/ex/BST/bmcast-bypass-when-ump.nam:91:m -t 0.14999999999999999 -s 10 -n send -c black -h box
+tcl/ex/BST/bmcast-dino-platform.nam:91:m -t 0.14999999999999999 -s 10 -n send -c black -h box
+tcl/ex/udpdata.tcl:22:#  This is a simple demonstration of how to send data in UDP datagrams
+tcl/ex/udpdata.tcl:72:	# if the message was of the form "ping(###)" then send a response of
+tcl/ex/udpdata.tcl:75:		$self send 100 "pong($number)"
+tcl/ex/udpdata.tcl:79:		$self send 100 "countdown($number)"
+tcl/ex/udpdata.tcl:91:# you to send packets of whatever size you need in your simulation without
+tcl/ex/udpdata.tcl:95:# if the send procedure is called without a second argument (e.g. "send 100")
+tcl/ex/udpdata.tcl:100:$ns at 0.1 "$udp0 send 724 ping(42)"
+tcl/ex/udpdata.tcl:101:$ns at 0.2 "$udp1 send 100 countdown(5)"
+tcl/ex/udpdata.tcl:102:$ns at 0.3 "$udp0 send 500 {ignore this message please}"
+tcl/ex/udpdata.tcl:103:$ns at 0.4 "$udp1 send 828 {ping  (12345678)}"
+tcl/ex/srm-demo.tcl:115:	$self send "ack $from_addr $seqno"
+tcl/ex/srm-demo.tcl:126:			$self send "data $addr_ $seqno"
+tcl/ex/srm-demo.tcl:139:	$self send "data $agent_addr_ $agent_port_ $seqno_"
+tcl/ex/srm-demo.tcl:173:			$self send "nack $from $seqno"
+tcl/ex/srm-demo.tcl:201:				$self send "nack $from $seqno"
+tcl/ex/srm-demo.tcl:213:		$self send "nack $from $seqno"
+tcl/ex/srm-demo.tcl:298:		$self send junk
+tcl/ex/srm-demo.txt:39:Receivers are of type "Agent/Message/MC_Acker", and send an ACK (white
+tcl/ex/srm-demo.txt:43:"Agent/Message/MC_Nacker", and send unicast NACK packets (blue)
+tcl/ex/srm-demo.txt:50:deterministic time send NACK/request packets multicast to the group.
+tcl/ex/srm.txt:50:(NB:  If DM multicasting is used, then expect to send periodic prunes
+tcl/ex/simple-webcache-comp.tcl:107:	# Comment out following line to continuously send requests
+tcl/ex/simple-webcache-comp.tcl:110:	# Comment out following line to send out ONE request
+tcl/ex/sat-aloha.tcl:73:Mac/Sat/UnslottedAloha set send_timeout_ 270ms; # resend if send times out
+tcl/ex/swp.tcl:68:Sender instproc cansend {} {
+tcl/ex/swp.tcl:75:	$self send $seqno_
+tcl/ex/swp.tcl:111:	$self send $ack_
+tcl/ex/asym/webbench.tcl:66:	# send a 1-pkt request from client to server
+tcl/ex/hdlc/mkgraphs.pl:85:#checks for packets send out. Used to calculate link utilization.
+tcl/ex/hdlc/mkgraphs.pl:165:# This will have the number of packets send out in a perticular interval 
+tcl/ex/hdlc/mkgraphs.pl:285:# Start up a gnuplot process and send the commands up until the END marker to
+tcl/ex/PIdemo/cbr.tcl:2:# nodes: 5, max conn: 1, send rate: 2.0, seed: 1
+tcl/ex/nam-simplexlink.tcl:49:$ns at 1.0 "$tcp1 send 2048"
+tcl/ex/tcpapp.tcl:23:#  to send data over a TCP connection.
+tcl/ex/tcpapp.tcl:82:# send a message via TcpApp
+tcl/ex/tcpapp.tcl:84:$ns at 0.5 "$app0 send 100 {$app1 recv {my mesage}}"
+tcl/ex/wireless-pkt-demo.tcl:270:# nodes: 5, max conn: 8, send rate: 0.25, seed: 1.0
+tcl/ex/wireless-pkt-demo.tcl:318:# nodes: 5, max conn: 8, send rate: 0.0, seed: 1.0
+tcl/scenario-generation/scen-lib/rmcc-2.tcl:13:# TCP sender 1 starts to send at t=0sec
+tcl/scenario-generation/scen-lib/rmcc-2.tcl:14:# SRM sender starts to send at t=10s
+tcl/scenario-generation/scen-lib/rmcc-2.tcl:15:# tcp sender 2 starts to send at t=20s
+tcl/scenario-generation/scen-lib/rmcc-4.tcl:6:#    RM send N o---o-----------o--o   RM recv N
+tcl/scenario-generation/scen-lib/rmcc-3.tcl:16:# RM sender 1 starts to send at t=0s
+tcl/scenario-generation/scen-lib/rmcc-3.tcl:17:# RM sender 2 starts to send at t=5s
+tcl/scenario-generation/scen-lib/rmcc-3.tcl:18:# RM sender 3 starts to send at t=10
+tcl/scenario-generation/scen-lib/rmcc-3.tcl:19:# CBR sender 1 starts to send at t=20s at 500Kbps
+tcp/tcp-newreno.cc:268:			 * "fast retransmit phase"), send one entirely new
+tcp/tcp-newreno.cc:287:	 * Try to send more data
+tcp/tcp-full.h:59:#define	TF_NEEDFIN	0x0800		/* send FIN (implicit state) */
+tcp/tcp-full.h:149:	int data_on_syn_;   // send data on initial SYN?
+tcp/tcp-full.h:156:	int iss_;       // initial send seq number
+tcp/tcp-full.h:194:	virtual int send_allowed(int);		// ok to send this seq#?
+tcp/tcp-full.h:218:	int need_send();    		// send ACK/win-update now?
+tcp/ack-recons.cc:147: * Arrange to send ack a at time t from now.
+tcp/snoop.cc:210:	/* Put packet (if not ack) in cache after checking, and send it on */
+tcp/snoop.cc:419:	 *    the packet we resend it, and drop the dupack.
+tcp/snoop.cc:428:		return SNOOP_PROPAGATE;	// send ack onward
+tcp/tcp-asym-sink.cc:115:	int max_sender_can_send = 0;
+tcp/tcp-asym-sink.cc:158:	 * Set delacklim_ based on how much data the sender can send if we don't
+tcp/tcp-asym-sink.cc:159:	 * send back any more acks. The idea is to avoid stalling the sender because
+tcp/tcp-asym-sink.cc:163:		max_sender_can_send = (int) min(tha->win()+acker_->Seqno()-tha->highest_ack(), tha->max_left_to_send());
+tcp/tcp-asym-sink.cc:196:	/* check if we have waited long enough that we should send an ack */
+tcp/tcp-asym-sink.cc:197:	if (delackcount_ < delacklim_) { /* it is not yet time to send an ack */
+tcp/tcp-asym-sink.cc:213:	else { /* send back an ack now */
+tcp/tcp-full.cc:90: *		calls tcp_output each time to (possibly) send a window
+tcp/tcp-full.cc:267:	// the simulation is running and we want to send a SYN.
+tcp/tcp-full.cc:356:	//	if ESTABLISHED, queue and try to send more
+tcp/tcp-full.cc:393: * a FIN will be sent when the send buffer emptys.
+tcp/tcp-full.cc:395: * when the send buffer empty
+tcp/tcp-full.cc:945: * see if we should send a segment, and if so, send it
+tcp/tcp-full.cc:956: * seqno, the next seq# we're going to send (snd_nxt)
+tcp/tcp-full.cc:1023:	// see if sending this packet will empty the send buffer
+tcp/tcp-full.cc:1075:	 * send now if a control packet or we owe peer an ACK
+tcp/tcp-full.cc:1086:         * No reason to send a segment, just return.
+tcp/tcp-full.cc:1168:	 * around until we actually send a segment
+tcp/tcp-full.cc:1173:	 * Don't reset cong_action_ until we send new data.
+tcp/tcp-full.cc:1212: * send_much: send as much data as we are allowed to.  This is
+tcp/tcp-full.cc:1215: * we are allowed to send whatever the window allows.
+tcp/tcp-full.cc:1216: * If pipectrl_ is set to TRUE, then we are allowed to send whatever
+tcp/tcp-full.cc:1267: * base TCP: we are allowed to send a sequence number if it
+tcp/tcp-full.cc:1292: * update segment to send next if appropriate
+tcp/tcp-full.cc:1320:		t_seqno_ = highest_ack_; // seq# to send next
+tcp/tcp-full.cc:1423:	return(foutput(seq, REASON_DUPACK));	// send one pkt
+tcp/tcp-full.cc:1674:	 * selected, and send a segment:
+tcp/tcp-full.cc:1767:		// Check if CE-marked SYN/ACK packet, then just send an ACK
+tcp/tcp-full.cc:2064:		// Reset the rtx timer, send another SYN/ACK packet
+tcp/tcp-full.cc:2200:					// send whatever window allows
+tcp/tcp-full.cc:2415:			// send an ACK (or SACK) to the other side right now.
+tcp/tcp-full.cc:2621: *	delayed send (randomization) timer (delsnd_timer_)
+tcp/tcp-full.cc:2637:	 * Due to F. Hernandez-Campos' fix in recv(), we may send an ACK
+tcp/tcp-full.cc:3042:	 * If not in ESTABLISHED, don't send anything we don't have
+tcp/tcp-full.cc:3055:// Calculate the next seq# to send by send_much.  If we are recovering and
+tcp/tcp-reno.cc:139:	 * Try to send more data
+tcp/linux/src/tcp_yeah.c:127:	 * advance of the left edge of our send window, so that the number
+tcp/linux/src/tcp_yeah.c:128:	 * of bytes we send in an RTT is often less than our cwnd will allow.
+tcp/linux/src/tcp_compound.c:82: *  o when we send a packet and there is no outstanding
+tcp/linux/src/tcp_compound.c:98:	/* Begin taking Vegas samples next time we send something. */
+tcp/linux/src/tcp_compound.c:101:	/* Set the beginning of the next send window. */
+tcp/linux/src/tcp_compound.c:285:	 * advance of the left edge of our send window, so that the number
+tcp/linux/src/tcp_compound.c:286:	 * of bytes we send in an RTT is often less than our cwnd will allow.
+tcp/linux/src/tcp_veno.c:39: *  o when we send a packet and there is no outstanding
+tcp/linux/src/tcp_vegas.c:63: *  o when we send a packet and there is no outstanding
+tcp/linux/src/tcp_vegas.c:79:	/* Begin taking Vegas samples next time we send something. */
+tcp/linux/src/tcp_vegas.c:82:	/* Set the beginning of the next send window. */
+tcp/linux/src/tcp_vegas.c:192:	 * advance of the left edge of our send window, so that the number
+tcp/linux/src/tcp_vegas.c:193:	 * of bytes we send in an RTT is often less than our cwnd will allow.
+tcp/linux/ns-linux-util.h:194://		rcv_wscale : 4;	/* Window scaling to send to receiver	*/
+tcp/linux/ns-linux-util.h:196://	__u8	eff_sacks;	/* Size of SACK array to send with next packet */
+tcp/linux/ns-linux-util.h:285://	__u32	write_seq;	/* Tail(+1) of data held in tcp send buffer */
+tcp/tcp-vegas.cc:415:	 * Try to send more data
+tcp/tcp-vegas.cc:481:	// record a find grained send time and # of transmits 
+tcp/tcp-fack.cc:362:			 * Set a delayed send timeout.
+tcp/tcp.h~:385:	int maxburst_;		/* max # packets can send back-2-back */
+tcp/tcp.h~:624:	int    v_slowstart_;    // # of pkts to send after slow-start, deflt(2)
+tcp/tcp.h~:649:	double v_actual_;	// actual send rate (pkt/s; needed for tcp-rbp)
+tcp/ack-recons.h:84:	void sendack(int ack, double t); /* send ack pkt at time t */
+tcp/tcp-sack-rh.cc:413:			 * Set a delayed send timeout.
+tcp/tcp-sink.cc:349:	// send it
+tcp/tcp-sink.cc:381:	// send any packets to the application
+tcp/tcp-sink.cc:428:        // Otherwise, send the ack and update the timer.
+tcp/tcp-sink.cc:682:			// don't record/send the block
+tcp/tfrc.h:189:	double rate_;		// send rate
+tcp/tfrc.h:214:	int InitRate_;		// initial send rate
+tcp/tfrc.h:239:	int datalimited_;	// to send immediately when a new packet
+tcp/tfrc-sink.cc:121:	sendrate = 0 ; // current send rate
+tcp/tfrc-sink.cc:172:	int UrgentFlag = 0;	// send loss report immediately
+tcp/tfrc-sink.cc:383: * Create report message, and send it.
+tcp/tfrc-sink.cc:389:	/*don't send an ACK unless we've received new data*/
+tcp/tfrc-sink.cc:393:	 * Do we want to send a report even if we have not received
+tcp/tcp-int.cc:211: * Unlike in other flavors of TCP, IntTcpAgent does not decide when to send 
+tcp/tfrc.cc:151:		// We were data-limited - send a packet now!
+tcp/tfrc.cc:223:	// send the first packet
+tcp/tfrc.cc:370:		// The voip flow gets to send at the same rate as
+tcp/tcp-sack1.cc:471:					process_qoption_after_send () ;
+tcp/tcp-sack1.cc:480:			 * Set a delayed send timeout.
+tcp/mptcp-full.cc~:260:  send (p, 0);
+tcp/tcp-rbp.cc:108:	double rbp_scale_;   // conversion from actual -> rbp send rates
+tcp/tcp-rbp.cc:215:		// What this means is we expect to send window() pkts
+tcp/tcp-rbp.cc:231:		// send one packet
+tcp/tcp-rbp.cc:272:	double rbp_scale_;   // conversion from actual -> rbp send rates
+tcp/tcp-rbp.cc:384:		// What this means is we expect to send window() pkts
+tcp/tcp-rbp.cc:408:		// send one packet
+tcp/tcp.h:401:	int maxburst_;		/* max # packets can send back-2-back */
+tcp/tcp.h:640:	int    v_slowstart_;    // # of pkts to send after slow-start, deflt(2)
+tcp/tcp.h:665:	double v_actual_;	// actual send rate (pkt/s; needed for tcp-rbp)
+tcp/tcp-full.cc~:90: *		calls tcp_output each time to (possibly) send a window
+tcp/tcp-full.cc~:267:	// the simulation is running and we want to send a SYN.
+tcp/tcp-full.cc~:356:	//	if ESTABLISHED, queue and try to send more
+tcp/tcp-full.cc~:393: * a FIN will be sent when the send buffer emptys.
+tcp/tcp-full.cc~:395: * when the send buffer empty
+tcp/tcp-full.cc~:943: * see if we should send a segment, and if so, send it
+tcp/tcp-full.cc~:954: * seqno, the next seq# we're going to send (snd_nxt)
+tcp/tcp-full.cc~:1021:	// see if sending this packet will empty the send buffer
+tcp/tcp-full.cc~:1073:	 * send now if a control packet or we owe peer an ACK
+tcp/tcp-full.cc~:1084:         * No reason to send a segment, just return.
+tcp/tcp-full.cc~:1166:	 * around until we actually send a segment
+tcp/tcp-full.cc~:1171:	 * Don't reset cong_action_ until we send new data.
+tcp/tcp-full.cc~:1210: * send_much: send as much data as we are allowed to.  This is
+tcp/tcp-full.cc~:1213: * we are allowed to send whatever the window allows.
+tcp/tcp-full.cc~:1214: * If pipectrl_ is set to TRUE, then we are allowed to send whatever
+tcp/tcp-full.cc~:1265: * base TCP: we are allowed to send a sequence number if it
+tcp/tcp-full.cc~:1290: * update segment to send next if appropriate
+tcp/tcp-full.cc~:1318:		t_seqno_ = highest_ack_; // seq# to send next
+tcp/tcp-full.cc~:1421:	return(foutput(seq, REASON_DUPACK));	// send one pkt
+tcp/tcp-full.cc~:1672:	 * selected, and send a segment:
+tcp/tcp-full.cc~:1765:		// Check if CE-marked SYN/ACK packet, then just send an ACK
+tcp/tcp-full.cc~:2062:		// Reset the rtx timer, send another SYN/ACK packet
+tcp/tcp-full.cc~:2198:					// send whatever window allows
+tcp/tcp-full.cc~:2413:			// send an ACK (or SACK) to the other side right now.
+tcp/tcp-full.cc~:2619: *	delayed send (randomization) timer (delsnd_timer_)
+tcp/tcp-full.cc~:2635:	 * Due to F. Hernandez-Campos' fix in recv(), we may send an ACK
+tcp/tcp-full.cc~:3040:	 * If not in ESTABLISHED, don't send anything we don't have
+tcp/tcp-full.cc~:3053:// Calculate the next seq# to send by send_much.  If we are recovering and
+tcp/mptcp-full.cc:260:  send (p, 0);
+tcp/tcp-rfc793edu.cc:236:	 * Try to send more data.
+tcp/tcp.cc:910: * Try to send as much data as the window will allow.  The link layer will 
+tcp/tcp.cc:932:				process_qoption_after_send () ; 
+tcp/tcp.cc:946:			 * Set a delayed send timeout.
+tcp/tcp.cc:986: * or available data acked, or if we are unable to send because 
+tcp/tcp.cc:999:	 *   be decreased to less than one, and we can't send another
+tcp/tcp.cc:1573: * congestion window by less than numdupacks_, then send a new packet.
+tcp/tcp.cc:1582:			process_qoption_after_send () ;
+tcp/tcp.cc:1832:	 * Try to send more data.
+tcp/tcp.cc:1847:	 	* delayed-send timer, with random overhead
+tcp/tcp.cc:2059:void TcpAgent::process_qoption_after_send ()
+tcp/tcp-linux.cc:663:			 * Set a delayed send timeout.
+tmix/tmix_delaybox.cc:255:	double time_to_send = flow->queue_->add(p, time + delay, 0);
+tmix/tmix_delaybox.cc:269:                flow->timer_->sched(time_to_send - time); // schedule the timer 
+tmix/tmix_delaybox.cc:272:				 time_to_send - time);
+tmix/tmix.cc:58:		fprintf (stderr,"\t%lu B (%g s after send / %g s after recv)\n",
+tmix/tmix.cc:62:		fprintf (stderr, "\tFIN (%g s after send / %g s after recv)\n",
+tmix/tmix.cc:811:			/* conc has send waits*/
+tmix/tmix.cc:1432:	/* if we send data first (before waiting for recv, send now */
+tmix/tmix.cc:1434:		timer_.resched(0);      // send data now
+tmix/tmix.cc:1462:	/* look at the next thing to send */
+tmix/tmix.cc:1510:	/* time to send an ADU */
+tmix/tmix.cc:1521:	/* need to know if this is the last ADU to send */
+tmix/tmix.cc:1561:	/* was not last ADU, still have more to send */
+tmix/tmix.cc:1570:		/* nothing to send yet */
+tmix/tmix.cc:1574:	/* set timer to send next ADU */
+tmix/tmix.cc:1670:			 * the peer to send another ADU */
+tmix/tmix.cc:1674:		/* schedule next send */
+tmix/tmix.h:82:/* Holds the size of the ADU (application data unit) and time-to-send delta.  
+tmix/tmix.h:288:	bool waiting_to_send_;     /* waiting to send something? */
+Binary file tmix/tmix.o matches
+tmix/cvec-orig2alt.pl:10:#               * bytes to send (if 0, send a FIN)
+tools/cbr_traffic.cc:63:	double rate_;     /* send rate during on time (bps) */
+tools/tskgen.cc:70:	double rate_;     /* send rate during on time (bps) */
+tools/tskgen.cc:157:	/* send a packet */
+tools/tskgen.cc:172:	/* figure out when to send the next one */
+tools/expoo.cc:70:	double rate_;     /* send rate during on time (bps) */
+tools/expoo.cc:152:	/* send a packet */
+tools/expoo.cc:159:	/* figure out when to send the next one */
+tools/trafgen.cc:55:	// Enable line below if you want to send immediately upon start
+tools/trafgen.cc:73:	/* send a packet */
+tools/trafgen.cc:75:	/* figure out when to send the next one */
+tools/pareto.cc:68:	double rate_;    /* send rate during burst (bps) */
+tools/tskgen.cc~:70:	double rate_;     /* send rate during on time (bps) */
+tools/tskgen.cc~:157:	/* send a packet */
+tools/tskgen.cc~:173:	/* figure out when to send the next one */
+tora/tora.cc:241:		  { // if no QRY pending, then send one
+tora/tora_dest.cc:150:				// send an UPDATE packet
+tora/tora_api.cc:60:		  { // must send a new query for this dest so the new
+trace/traffictrace.cc:256:        /* send a packet */
+trace/traffictrace.cc:261:        /* figure out when to send the next one */
+validate.out:162:ftp 1 bytes_produced 900 (using `FTP send nbytes')
+validate.out:188:ftp 1 bytes_produced 900 (using `FTP send nbytes')
+validate.out:214:ftp 1 bytes_produced 900 (using `FTP send nbytes')
+validate.out:240:ftp 1 bytes_produced 900 (using `FTP send nbytes')
+validate.out:266:ftp 1 bytes_produced 900 (using `FTP send nbytes')
+validate.out:1198:ftp 1 bytes_produced 1000 (using `FTP send nbytes')
+webcache/webtraf.cc:105:		// once, but we do not actually send out requests. This extra
+webcache/logweb.h:67:// Data structure for the timer to send requests
+webcache/http-aux.cc:73:		// Used only to mark that this page will be send in 
+webcache/logweb.cc:56:// Timer to send requests
+webcache/http-aux.h:251:		// Used only to mark that this page will be send in the 
+webcache/http-aux.h:296:		// Minimum size 1 so that TCP will send a packet
+webcache/mcache.cc:1227:	// We are not on the prefetching list, send a normal data segment
+webcache/mcache.cc:1241:		// If there's a pending segment in any layer, send it
+webcache/inval-agent.cc:44:// Agents used to send and receive invalidation records
+webcache/tcpapp.cc:258:		 * <app> send <size> <tcl_script>
+webcache/tcp-simple.cc:70:// XXX Do *NOT* support infinite send of TCP (bytes == -1).
+webcache/http.cc:298:			 * <ts> is the agent used to send packets out.
+webcache/http.cc:329:			 * <http> send <client> <bytes> <callback> 
+wpan/p802_15_4phy.cc:229:			//send the packet to Radio (channel target) for transmission
+wpan/p802_15_4phy.cc:730:	//send a confirm
+wpan/p802_15_4mac.cc:1232:		//send an acknowledgement if needed (no matter this is a duplicated packet or not)
+wpan/p802_15_4mac.cc:1593:					&& (mpib.macShortAddress != 0xffff)				//allow to send beacons
+wpan/p802_15_4mac.cc:1596:				//send a beacon using unslotted CSMA-CA
+wpan/p802_15_4mac.cc:1884:			if (capability.FFD/*&&(numberDeviceLink(&deviceLink1) > 0)*/)	//send a beacon here
+wpan/p802_15_4mac.cc:2093:	//Though we assume the upper layer should know what it is doing -- should send down requests one by one.
+wpan/p802_15_4mac.cc:2963:			//--- send an association request command ---
+wpan/p802_15_4mac.cc:3046:			//-- send a data request command to extract the response ---
+wpan/p802_15_4mac.cc:3286:	if (DeviceAddress != mpib.macCoordExtendedAddress)		//send to a device
+wpan/p802_15_4mac.cc:3383:				//send a coordinator realignment command
+wpan/p802_15_4mac.cc:3778:					//--- send a beacon request command ---
+wpan/p802_15_4mac.cc:3951:				//--- send an orphan notification command ---
+wpan/p802_15_4mac.cc:4088:			if (CoordRealignment)		//send a realignment command before changing configuration that affects the command
+wpan/p802_15_4mac.cc:4321:			//-- send a data request command ---
+wpan/p802_15_4mac.cc:4983:		//send out delayed ack.
+wpan/p802_15_4mac.cc:5187:	//then the pending flag in the ack. should be set to 1, and then send a zero-length data packet
+wpan/p802_15_4mac.cc:5516:			//Continue to send pending packet (an ack. already sent).
+wpan/p802_15_4mac.cc:5518:			//then the pending flag in the ack. should be set to 1, and then send a zero-length data packet
+wpan/p802_15_4mac.cc:5598:			//else		//may need to send a zero-length packet in implementation
+xcp/xcp-end-sys.h:107:	double	xcp_rev_fb_;	/* Accumulated throughput change to send back, B/s */

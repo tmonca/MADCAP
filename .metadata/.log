@@ -1,0 +1,836 @@
+!SESSION 2011-12-19 14:18:37.499 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2011-12-19 14:22:12.394
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=hardClose;severity4;exception=java.io.IOException: Stream closed;children=[]]
+!STACK 0
+java.io.IOException: Stream closed
+	at java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:162)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:325)
+	at org.apache.commons.httpclient.ContentLengthInputStream.read(ContentLengthInputStream.java:170)
+	at org.apache.commons.httpclient.ContentLengthInputStream.read(ContentLengthInputStream.java:184)
+	at org.apache.commons.httpclient.ChunkedInputStream.exhaustInputStream(ChunkedInputStream.java:369)
+	at org.apache.commons.httpclient.ContentLengthInputStream.close(ContentLengthInputStream.java:118)
+	at java.io.FilterInputStream.close(FilterInputStream.java:172)
+	at org.apache.commons.httpclient.AutoCloseInputStream.notifyWatcher(AutoCloseInputStream.java:194)
+	at org.apache.commons.httpclient.AutoCloseInputStream.close(AutoCloseInputStream.java:158)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.hardClose(AbstractRetrieveFileTransfer.java:331)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.hardClose(HttpClientRetrieveFileTransfer.java:396)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.cancel(HttpClientRetrieveFileTransfer.java:382)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.handleTransferEvent(FileReader.java:173)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.fireTransferReceiveDataEvent(AbstractRetrieveFileTransfer.java:388)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.fireTransferReceiveDataEvent(HttpClientRetrieveFileTransfer.java:1163)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.handleReceivedData(AbstractRetrieveFileTransfer.java:288)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer$1.performFileTransfer(AbstractRetrieveFileTransfer.java:173)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2011-12-19 14:31:59.220 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2011-12-19 14:34:11.648
+!MESSAGE Invalid preference page path: Logging
+!SESSION 2011-12-19 14:34:13.618 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.help 4 0 2011-12-19 14:34:35.165
+!MESSAGE Error reading help table of contents file /"org.eclipse.linuxtools.cdt.autotools_docs/tools.xml" (skipping file)
+!STACK 0
+java.io.FileNotFoundException
+	at org.eclipse.help.internal.toc.TocFileParser.parse(TocFileParser.java:49)
+	at org.eclipse.help.internal.toc.TocFileProvider.getTocContributions(TocFileProvider.java:47)
+	at org.eclipse.help.internal.toc.TocManager.getAndCacheTocContributions(TocManager.java:210)
+	at org.eclipse.help.internal.toc.TocManager.getTocContributionsForToc(TocManager.java:199)
+	at org.eclipse.help.internal.toc.TocManager.getRootTocContributions(TocManager.java:306)
+	at org.eclipse.help.internal.toc.TocManager.getTocs(TocManager.java:68)
+	at org.eclipse.help.internal.toc.TocManager.getTopic(TocManager.java:123)
+	at org.eclipse.help.internal.toc.TocManager.getTopicPath(TocManager.java:138)
+	at org.eclipse.help.internal.webapp.data.UrlUtil.getTopicPath(UrlUtil.java:216)
+	at org.eclipse.help.internal.webapp.servlet.BreadcrumbsFilter.filter(BreadcrumbsFilter.java:75)
+	at org.eclipse.help.internal.webapp.servlet.EclipseConnector.transfer(EclipseConnector.java:193)
+	at org.eclipse.help.internal.webapp.servlet.ContentServlet.doGet(ContentServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180)
+	at org.eclipse.equinox.http.servlet.internal.ServletRegistration.service(ServletRegistration.java:61)
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.processAlias(ProxyServlet.java:126)
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.service(ProxyServlet.java:68)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:317)
+	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:390)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:765)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:322)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:926)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+
+!ENTRY org.eclipse.help.base 4 4 2011-12-19 14:34:48.388
+!MESSAGE Help documentation could not be indexed completely.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.388
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_fileviewer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.388
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.controls/doc-html/swt_customcontrols_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.388
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.compare.examples.xml/doc-html/ui_xmlcompare_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.388
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.readmetool/doc-html/ui_readmetool_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.propertysheet/doc-html/ui_propertysheet_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_helloworld_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.undo/doc-html/ui_undo_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_localhistory_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.browser/doc-html/swt_browser_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_javaviewer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_texteditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.javaeditor/doc-html/ui_templateeditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_model_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.launcher/doc-html/swt_launcher_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_imageanalyzer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.multipageeditor/doc-html/ui_multipageeditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_hoverhelp_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.layouts/doc-html/swt_layout_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.compare.examples/doc-html/ui_structurecreator_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_addressbook_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_manual_setup.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.ole.win32/doc-html/swt_ole_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.paint/doc-html/swt_paint_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_filesystem_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.controls/doc-html/swt_controls_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.fieldassist/doc-html/ui_fieldassist_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_clipboard_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2011-12-19 14:34:48.389
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.javaeditor/doc-html/ui_javaeditor_ex.html cannot be opened.
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:36:31.047
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:36:31.047
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:36:31.047
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:37:34.752
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:37:34.752
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:37:34.752
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:38:50.763
+!MESSAGE Indexed 'ns-2.35' (0 sources, 13 headers) in 0.16 sec: 0 declarations; 0 references; 13 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:40:35.943
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:40:35.943
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:40:35.943
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:41:30.884
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:41:30.884
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:41:30.884
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:43:31.921
+!MESSAGE Indexed 'ns-2.35a' (0 sources, 98 headers) in 1.03 sec: 2,297 declarations; 2,450 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:44:48.533
+!MESSAGE Indexed 'ns-2.35' (480 sources, 742 headers) in 21.03 sec: 80,072 declarations; 307,271 references; 42 unresolved inclusions; 20 syntax errors; 8,015 unresolved names (2.03%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:46:07.928
+!MESSAGE Indexed 'ns-2.35' (480 sources, 742 headers) in 15.73 sec: 80,072 declarations; 307,271 references; 42 unresolved inclusions; 20 syntax errors; 8,015 unresolved names (2.03%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:50:47.796
+!MESSAGE Indexed 'ns-2.35' (1 sources, 170 headers) in 1.60 sec: 10,392 declarations; 15,530 references; 0 unresolved inclusions; 5 syntax errors; 87 unresolved names (0.33%)
+
+!ENTRY org.eclipse.cdt.core 4 0 2011-12-19 14:50:58.759
+!MESSAGE Error: Resource '/ns-2.35/src/ns-2.35.cpp' does not exist.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ns-2.35/src/ns-2.35.cpp' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:287)
+	at org.eclipse.cdt.internal.core.parser.InternalParserUtil.createWorkspaceFileContent(InternalParserUtil.java:145)
+	at org.eclipse.cdt.core.parser.FileContent.create(FileContent.java:83)
+	at org.eclipse.cdt.core.parser.FileContent.create(FileContent.java:67)
+	at org.eclipse.cdt.internal.core.pdom.indexer.ProjectIndexerInputAdapter.getCodeReader(ProjectIndexerInputAdapter.java:262)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:753)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:637)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:344)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:127)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2011-12-19 14:50:58.760
+!MESSAGE Resource '/ns-2.35/src/ns-2.35.cpp' does not exist.
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:52:03.425
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:52:03.425
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:52:03.425
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:53:18.333
+!MESSAGE Indexed 'ns-2' (0 sources, 98 headers) in 0.37 sec: 2,297 declarations; 2,450 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 14:53:46.004
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 14:53:46.004
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 14:53:46.004
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+!SESSION 2011-12-19 14:54:14.844 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:55:18.686
+!MESSAGE Indexed 'ns-' (0 sources, 98 headers) in 0.93 sec: 2,297 declarations; 2,450 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:56:27.410
+!MESSAGE Indexed 'Debug_ns' (0 sources, 8 headers) in 0.04 sec: 0 declarations; 0 references; 8 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2011-12-19 14:57:55.609 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.core.resources 4 567 2011-12-19 14:58:38.323
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2011-12-19 14:58:38.323
+!MESSAGE Could not read metadata for 'ns-'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'ns-' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:873)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:853)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:702)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1527)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2503)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:299)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:268)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:462)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:400)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:266)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2011-12-19 14:58:38.324
+!MESSAGE The project description file (.project) for 'ns-' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 14:59:32.483
+!MESSAGE Indexed 'ns-2.35' (0 sources, 98 headers) in 1.07 sec: 2,297 declarations; 2,450 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 15:00:54.407
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 15:00:54.407
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 15:00:54.407
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.core.resources 4 77 2011-12-19 15:03:26.971
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2011-12-19 15:03:26.971
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2011-12-19 15:03:26.971
+!MESSAGE /home/toby/Downloads/ns-allinone-2.35/ns-2.35 overlaps the workspace location: /home/toby/Downloads/ns-allinone-2.35/ns-2.35
+
+!ENTRY org.eclipse.cdt.core 1 0 2011-12-19 15:04:38.790
+!MESSAGE Indexed 'ns2' (0 sources, 98 headers) in 0.59 sec: 2,297 declarations; 2,450 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:06:55.488
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10001 2011-12-19 15:06:55.488
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.488
+!MESSAGE "Eclipse C/C++ Development Tools" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.488
+!MESSAGE "Eclipse C/C++ DSF gdb Debugger Integration" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.489
+!MESSAGE "Eclipse C/C++ Development Platform" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.489
+!MESSAGE "CDT GNU Toolchain Debug Support" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.489
+!MESSAGE "Eclipse CDT p2 Toolchain Installer" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.489
+!MESSAGE "CDT GNU Toolchain Build Support" will be ignored because a newer version is already installed. 
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.489
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE Software currently installed: C/C++ DSF GDB Debugger Integration 2.1.0.201102110609 (org.eclipse.cdt.gnu.dsf.feature.group 2.1.0.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.489
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201102110609 (org.eclipse.cdt.launch 6.1.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.200906161748 (org.eclipse.cdt.launch 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.200909110608 (org.eclipse.cdt.launch 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.201002161416 (org.eclipse.cdt.launch 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201006141710 (org.eclipse.cdt.launch 6.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201009141542 (org.eclipse.cdt.launch 6.1.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.489
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [6.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.489
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.489
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.201002161416 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.491
+!MESSAGE To: org.eclipse.cdt.launch [6.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.491
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.491
+!MESSAGE From: C/C++ DSF GDB Debugger Integration 2.1.0.201102110609 (org.eclipse.cdt.gnu.dsf.feature.group 2.1.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.491
+!MESSAGE To: org.eclipse.cdt.launch 6.1.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.491
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.491
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.491
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:06:55.499
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10001 2011-12-19 15:06:55.499
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "Eclipse C/C++ Development Tools" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "Eclipse C/C++ DSF gdb Debugger Integration" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "Eclipse C/C++ Development Platform" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "CDT GNU Toolchain Debug Support" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "Eclipse CDT p2 Toolchain Installer" will be ignored because a newer version is already installed. 
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10004 2011-12-19 15:06:55.499
+!MESSAGE "CDT GNU Toolchain Build Support" will be ignored because a newer version is already installed. 
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE Software currently installed: C/C++ DSF GDB Debugger Integration 2.1.0.201102110609 (org.eclipse.cdt.gnu.dsf.feature.group 2.1.0.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201102110609 (org.eclipse.cdt.launch 6.1.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.200906161748 (org.eclipse.cdt.launch 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.200909110608 (org.eclipse.cdt.launch 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.0.0.201002161416 (org.eclipse.cdt.launch 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201006141710 (org.eclipse.cdt.launch 6.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE C/C++ Development Tools Launching Support 6.1.0.201009141542 (org.eclipse.cdt.launch 6.1.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [6.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.201002161416 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE To: org.eclipse.cdt.launch [6.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE From: C/C++ DSF GDB Debugger Integration 2.1.0.201102110609 (org.eclipse.cdt.gnu.dsf.feature.group 2.1.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE To: org.eclipse.cdt.launch 6.1.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:06:55.499
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.499
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:06:55.500
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:07:33.715
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.715
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.0.200906161748 (org.eclipse.cdt.sdk.feature.group 6.0.0.200906161748)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201102110609 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 5.1.0.200906161748 (org.eclipse.cdt.managedbuilder.ui 5.1.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 5.1.0.201002161416 (org.eclipse.cdt.managedbuilder.ui 5.1.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 5.1.0.200909110608 (org.eclipse.cdt.managedbuilder.ui 5.1.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201006141710 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201009141542 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.0.200906161748 (org.eclipse.cdt.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.2.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.0.200906161748 (org.eclipse.cdt.platform.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.managedbuilder.ui [5.1.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.2.201002161416 (org.eclipse.cdt.platform.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.managedbuilder.ui [5.1.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.0.200906161748 (org.eclipse.cdt.sdk.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.716
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:07:33.723
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.0.200906161748 (org.eclipse.cdt.sdk.feature.group 6.0.0.200906161748)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201102110609 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 5.1.0.200906161748 (org.eclipse.cdt.managedbuilder.ui 5.1.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 5.1.0.201002161416 (org.eclipse.cdt.managedbuilder.ui 5.1.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 5.1.0.200909110608 (org.eclipse.cdt.managedbuilder.ui 5.1.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201006141710 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE C/C++ Managed Builder UI 7.0.0.201009141542 (org.eclipse.cdt.managedbuilder.ui 7.0.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.0.200906161748 (org.eclipse.cdt.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.2.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.0.200906161748 (org.eclipse.cdt.platform.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.managedbuilder.ui [5.1.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.2.201002161416 (org.eclipse.cdt.platform.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.managedbuilder.ui [5.1.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.0.200906161748 (org.eclipse.cdt.sdk.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.0.200906161748]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:07:33.723
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:07:33.723
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:08:28.053
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Software currently installed: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.1.0.201006141710 (org.eclipse.cdt.dsf 2.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.0.0.200906161748 (org.eclipse.cdt.dsf 2.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.1.0.201009141542 (org.eclipse.cdt.dsf 2.1.0.201009141542)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.0.0.200909110608 (org.eclipse.cdt.dsf 2.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.1.1.201102110609 (org.eclipse.cdt.dsf 2.1.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE Debug Services Framework Core 2.0.0.201002161416 (org.eclipse.cdt.dsf 2.0.0.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.2.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [7.0.2.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.2.201002161416 (org.eclipse.cdt.platform.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE To: org.eclipse.cdt.dsf [2.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.053
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.053
+!MESSAGE From: C/C++ Development Platform 7.0.2.201102110609 (org.eclipse.cdt.platform.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.054
+!MESSAGE To: org.eclipse.cdt.dsf [2.1.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.054
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.054
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.054
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:08:28.056
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Software being installed: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Software currently installed: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.1.0.201006141710 (org.eclipse.cdt.dsf 2.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.0.0.200906161748 (org.eclipse.cdt.dsf 2.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.1.0.201009141542 (org.eclipse.cdt.dsf 2.1.0.201009141542)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.0.0.200909110608 (org.eclipse.cdt.dsf 2.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.1.1.201102110609 (org.eclipse.cdt.dsf 2.1.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE Debug Services Framework Core 2.0.0.201002161416 (org.eclipse.cdt.dsf 2.0.0.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE From: Eclipse C/C++ Development Tools 6.0.2.201002161416 (org.eclipse.cdt.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [6.0.2.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [7.0.2.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE From: Eclipse C/C++ Development Platform 6.0.2.201002161416 (org.eclipse.cdt.platform.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE To: org.eclipse.cdt.dsf [2.0.0.201002161416]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE From: C/C++ Development Platform 7.0.2.201102110609 (org.eclipse.cdt.platform.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE To: org.eclipse.cdt.dsf [2.1.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:28.056
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE From: Eclipse C/C++ Development Tools SDK 6.0.2.201002161416 (org.eclipse.cdt.sdk.feature.group 6.0.2.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:28.056
+!MESSAGE To: org.eclipse.cdt.feature.group [6.0.2.201002161416]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:08:42.344
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.344
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE Software being installed: Eclipse C/C++ GDB Hardware Debugging 5.1.0.201002161416 (org.eclipse.cdt.debug.gdbjtag.feature.group 5.1.0.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE Software currently installed: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.344
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.1.201102110609 (org.eclipse.cdt.debug.mi.core 7.0.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.1.201009141542 (org.eclipse.cdt.debug.mi.core 7.0.1.201009141542)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.200906161748 (org.eclipse.cdt.debug.mi.core 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.200909110608 (org.eclipse.cdt.debug.mi.core 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.201002161416 (org.eclipse.cdt.debug.mi.core 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.344
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.0.201006141710 (org.eclipse.cdt.debug.mi.core 7.0.0.201006141710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201102110609 (org.eclipse.cdt.debug.ui 7.0.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.200906161748 (org.eclipse.cdt.debug.ui 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.200909110608 (org.eclipse.cdt.debug.ui 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.201002161416 (org.eclipse.cdt.debug.ui 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201006141710 (org.eclipse.cdt.debug.ui 7.0.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201009141542 (org.eclipse.cdt.debug.ui 7.0.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: Eclipse C/C++ GDB Hardware Debugging 5.1.0.201002161416 (org.eclipse.cdt.debug.gdbjtag.feature.group 5.1.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [7.0.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [7.0.2.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.200906161748 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.200909110608 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.201002161416 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE From: C/C++ GNU Toolchain Debug Support 6.1.0.201006141710 (org.eclipse.cdt.gnu.debug.feature.group 6.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.345
+!MESSAGE To: org.eclipse.cdt.debug.mi.core [7.0.0.201006141710]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.345
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.346
+!MESSAGE From: C/C++ GNU Toolchain Debug Support 7.0.1.201102110609 (org.eclipse.cdt.gnu.debug.feature.group 7.0.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.346
+!MESSAGE To: org.eclipse.cdt.debug.mi.core [7.0.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.346
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.346
+!MESSAGE From: C/C++ Development Platform 7.0.2.201102110609 (org.eclipse.cdt.platform.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.346
+!MESSAGE To: org.eclipse.cdt.debug.ui [7.0.0.201102110609]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2011-12-19 15:08:42.347
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE Software being installed: Eclipse C/C++ GDB Hardware Debugging 5.1.0.201002161416 (org.eclipse.cdt.debug.gdbjtag.feature.group 5.1.0.201002161416)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE Software currently installed: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.1.201102110609 (org.eclipse.cdt.debug.mi.core 7.0.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.1.201009141542 (org.eclipse.cdt.debug.mi.core 7.0.1.201009141542)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.200906161748 (org.eclipse.cdt.debug.mi.core 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.200909110608 (org.eclipse.cdt.debug.mi.core 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 6.0.0.201002161416 (org.eclipse.cdt.debug.mi.core 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools GDB/MI CDI Debugger Core 7.0.0.201006141710 (org.eclipse.cdt.debug.mi.core 7.0.0.201006141710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201102110609 (org.eclipse.cdt.debug.ui 7.0.0.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.200906161748 (org.eclipse.cdt.debug.ui 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.200909110608 (org.eclipse.cdt.debug.ui 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 6.0.0.201002161416 (org.eclipse.cdt.debug.ui 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201006141710 (org.eclipse.cdt.debug.ui 7.0.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE C/C++ Development Tools Debugger UI 7.0.0.201009141542 (org.eclipse.cdt.debug.ui 7.0.0.201009141542)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE From: Eclipse C/C++ GDB Hardware Debugging 5.1.0.201002161416 (org.eclipse.cdt.debug.gdbjtag.feature.group 5.1.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE To: org.eclipse.cdt.gnu.debug.feature.group [7.0.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE From: C/C++ Development Tools 7.0.2.201102110609 (org.eclipse.cdt.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE To: org.eclipse.cdt.platform.feature.group [7.0.2.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.200906161748 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.200906161748)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.347
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.347
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.200909110608 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.200909110608)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.348
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE From: CDT GNU Toolchain Debug Support 6.0.0.201002161416 (org.eclipse.cdt.gnu.debug.feature.group 6.0.0.201002161416)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE To: org.eclipse.cdt.debug.ui [6.0.0,7.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.348
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE From: C/C++ GNU Toolchain Debug Support 6.1.0.201006141710 (org.eclipse.cdt.gnu.debug.feature.group 6.1.0.201006141710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE To: org.eclipse.cdt.debug.mi.core [7.0.0.201006141710]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.348
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE From: C/C++ GNU Toolchain Debug Support 7.0.1.201102110609 (org.eclipse.cdt.gnu.debug.feature.group 7.0.1.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE To: org.eclipse.cdt.debug.mi.core [7.0.1.201102110609]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-12-19 15:08:42.348
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE From: C/C++ Development Platform 7.0.2.201102110609 (org.eclipse.cdt.platform.feature.group 7.0.2.201102110609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-12-19 15:08:42.348
+!MESSAGE To: org.eclipse.cdt.debug.ui [7.0.0.201102110609]
